@@ -1,40 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+## Pawan Infra Developer — Website
 
-## Getting Started
+Elegant, professional, and minimal website for a construction and real-estate developer.
 
-First, run the development server:
+### Tech
+- Next.js (Pages Router) + TypeScript
+- Tailwind CSS
+- Framer Motion (subtle animations)
+- React Icons
 
+### Scripts
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev      # Start dev server on http://localhost:3000
+npm run build    # Production build
+npm run start    # Start production server
+npm run lint     # Lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Structure
+```
+src/
+  components/    # Navbar, Footer, Hero, Cards, ContactForm, Section
+  pages/         # Home, About, Projects, Services, Gallery, Contact
+  styles/        # Tailwind global styles
+public/assets/   # Placeholder images
+```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Deployment (GitHub → Vercel)
+1. Push this repository to GitHub.
+2. Create a new Vercel project and import the repo.
+3. Use defaults; framework is detected automatically.
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Customization
+- Update colors/typography via Tailwind utility classes.
+- Replace placeholder images in `public/assets`.
+- Update meta tags in `src/pages/_app.tsx` and `src/pages/_document.tsx`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
