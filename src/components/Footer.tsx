@@ -1,56 +1,57 @@
-import Link from 'next/link'
-import { FaInstagram, FaLinkedin } from 'react-icons/fa6'
+import Link from "next/link"
+import { Facebook, Instagram, Linkedin } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="mt-24 border-t border-gray-200 bg-white">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 py-12 md:grid-cols-4">
-        <div className="md:col-span-2">
-          <h3 className="text-lg font-semibold">Pawan Infra Developer</h3>
-          <p className="mt-3 text-sm text-gray-600">
-            Elegant, professional construction and real-estate solutions for modern living.
+    <footer className="bg-[#1E1E1E] text-white py-14 px-6 mt-20">
+      <div className="max-w-7xl mx-auto grid gap-10 md:grid-cols-3">
+        {/* Column 1 */}
+        <div>
+          <h3 className="text-2xl font-semibold text-[#C6A45B] mb-3">
+            Pawan Infra Developer
+          </h3>
+          <p className="text-gray-400 text-sm leading-relaxed">
+            Building spaces that inspire trust, comfort, and excellence across Pune and beyond.
           </p>
-          <div className="mt-4 flex items-center gap-4 text-gray-600">
-            <a href="#" aria-label="Instagram" className="hover:text-gray-900">
-              <FaInstagram size={20} />
-            </a>
-            <a href="#" aria-label="LinkedIn" className="hover:text-gray-900">
-              <FaLinkedin size={20} />
-            </a>
-          </div>
         </div>
 
-        <div>
-          <h4 className="text-sm font-semibold text-gray-900">Quick Links</h4>
-          <ul className="mt-3 space-y-2 text-sm text-gray-600">
-            <li><Link href="/" className="hover:text-gray-900">Home</Link></li>
-            <li><Link href="/about" className="hover:text-gray-900">About</Link></li>
-            <li><Link href="/projects" className="hover:text-gray-900">Projects</Link></li>
-            <li><Link href="/services" className="hover:text-gray-900">Services</Link></li>
-            <li><Link href="/gallery" className="hover:text-gray-900">Gallery</Link></li>
-            <li><Link href="/contact" className="hover:text-gray-900">Contact</Link></li>
+        {/* Column 2 */}
+        <div className="md:text-center">
+          <h4 className="text-lg font-semibold mb-4 text-[#C6A45B]">Quick Links</h4>
+          <ul className="space-y-2 text-gray-400">
+            {["Home", "About", "Projects", "Services", "Gallery", "Contact"].map((page) => (
+              <li key={page}>
+                <Link
+                  href={`/${page === "Home" ? "" : page.toLowerCase()}`}
+                  className="relative hover:text-[#C6A45B] transition-colors after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#C6A45B] hover:after:w-full after:transition-all after:duration-300"
+                >
+                  {page}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
-        <div>
-          <h4 className="text-sm font-semibold text-gray-900">Contact</h4>
-          <address className="mt-3 not-italic text-sm text-gray-600">
-            123 Business Park, Pune, MH 411001
-            <br />
-            Phone: +91 98765 43210
-            <br />
-            Email: info@pawaninfra.dev
-          </address>
+        {/* Column 3 */}
+        <div className="md:text-right">
+          <h4 className="text-lg font-semibold mb-4 text-[#C6A45B]">Connect With Us</h4>
+          <div className="flex md:justify-end gap-4">
+            <a href="#" className="group">
+              <Facebook className="w-5 h-5 text-gray-400 group-hover:text-[#C6A45B] transition-colors" />
+            </a>
+            <a href="#" className="group">
+              <Instagram className="w-5 h-5 text-gray-400 group-hover:text-[#C6A45B] transition-colors" />
+            </a>
+            <a href="#" className="group">
+              <Linkedin className="w-5 h-5 text-gray-400 group-hover:text-[#C6A45B] transition-colors" />
+            </a>
+          </div>
+          <p className="text-sm text-gray-500 mt-5">
+            © {new Date().getFullYear()} Pawan Infra Developer
+            <br /> Designed by <span className="text-[#C6A45B] font-medium">Atharv</span>
+          </p>
         </div>
-      </div>
-
-      <div className="border-t border-gray-200 py-4">
-        <p className="mx-auto max-w-7xl px-6 text-xs text-gray-500">
-          © Pawan Infra Developer | Designed by Atharv
-        </p>
       </div>
     </footer>
   )
 }
-
-

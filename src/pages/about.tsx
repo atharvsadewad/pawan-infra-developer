@@ -1,41 +1,59 @@
-import Section from "@/components/Section"
+import { motion } from "framer-motion"
+import Head from "next/head"
 
-export default function AboutPage() {
+
+<Head>
+  <title>About Us | Pawan Infra Developer</title>
+  <meta
+    name="description"
+    content="Learn about Pawan Infra Developer’s vision, mission, and core values that drive our commitment to creating timeless spaces across Pune."
+  />
+</Head>
+
+
+export default function About() {
   return (
-    <>
-      <Section title="About Pawan Infra Developer" subtitle="Our story, vision, and values." className="bg-white">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-          <p className="text-gray-600">
-            Pawan Infra Developer is a modern real-estate and construction firm focused on crafting
-            high-quality spaces. We blend thoughtful design with robust engineering to build
-            enduring structures that elevate everyday living.
-          </p>
-          <div className="rounded-xl bg-gray-100 p-6 text-sm text-gray-700">
-            <h3 className="text-base font-semibold text-gray-900">Vision</h3>
-            <p className="mt-2">To be a trusted name in premium, future-ready developments.</p>
-            <h3 className="mt-6 text-base font-semibold text-gray-900">Mission</h3>
-            <p className="mt-2">Deliver elegant, efficient, and sustainable spaces for modern lifestyles.</p>
-            <h3 className="mt-6 text-base font-semibold text-gray-900">Core Values</h3>
-            <ul className="mt-2 list-disc pl-5">
-              <li>Quality craftsmanship</li>
-              <li>Transparency</li>
-              <li>Timely delivery</li>
-              <li>Customer-centric approach</li>
-            </ul>
-          </div>
-        </div>
-      </Section>
+    <section className="min-h-screen bg-[#FAFAFA] py-24 px-6">
+      <div className="max-w-5xl mx-auto text-center">
+        <h2 className="text-4xl font-semibold text-[#1E1E1E] mb-6 relative inline-block after:absolute after:w-20 after:h-[3px] after:bg-[#C6A45B] after:left-1/2 after:-translate-x-1/2 after:-bottom-3">
+          About Us
+        </h2>
+        <p className="text-gray-600 max-w-2xl mx-auto mt-6 leading-relaxed">
+          Pawan Infra Developer is a growing construction and real-estate company driven by the
+          vision of creating enduring spaces that combine design, innovation, and sustainability.
+          Founded with the belief that every project is an opportunity to enrich lives, we take
+          pride in delivering quality that lasts for generations.
+        </p>
+      </div>
 
-      <Section className="bg-gray-50" subtitle="A note from the founder (placeholder)">
-        <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-3">
-          <div className="h-40 rounded-xl bg-gray-200 md:col-span-1" />
-          <p className="md:col-span-2 text-gray-600">
-            "We believe great spaces are built on clarity, empathy, and attention to detail."
-          </p>
-        </div>
-      </Section>
-    </>
+      <div className="mt-20 grid gap-10 md:grid-cols-3 max-w-6xl mx-auto">
+        {[
+          {
+            title: "Our Vision",
+            text: "To redefine the skyline of modern cities with architectural excellence and unwavering trust.",
+          },
+          {
+            title: "Our Mission",
+            text: "To build structures that reflect innovation, transparency, and long-term value for our clients.",
+          },
+          {
+            title: "Our Values",
+            text: "Integrity • Quality • Commitment • Sustainability • Customer First.",
+          },
+        ].map((item, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: i * 0.15 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-2xl p-8 shadow-[0_4px_30px_rgba(0,0,0,0.05)] hover:-translate-y-1 transition-all duration-300"
+          >
+            <h3 className="text-xl font-semibold text-[#C6A45B] mb-3">{item.title}</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">{item.text}</p>
+          </motion.div>
+        ))}
+      </div>
+    </section>
   )
 }
-
-

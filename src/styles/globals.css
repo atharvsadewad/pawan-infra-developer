@@ -1,17 +1,21 @@
+/* ✅ Google Fonts must come FIRST */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ✅ Tailwind must come SECOND */
 @import "tailwindcss";
 
+/* --------------------------------------------- */
+/* Global Theme Variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FAFAFA;
+  --foreground: #1E1E1E;
+  --primary: #C6A45B;
+  --muted: #F2F2F2;
+  --divider: #E5E5E5;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* --------------------------------------------- */
+/* Dark Mode Support */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -19,8 +23,71 @@
   }
 }
 
+/* --------------------------------------------- */
+/* Base Styles */
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth; /* ✅ simple, native smooth scroll */
+}
+
+/* --------------------------------------------- */
+/* Headings */
+h1, h2, h3, h4 {
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* --------------------------------------------- */
+/* Section Padding */
+section {
+  scroll-margin-top: 5rem;
+}
+
+/* --------------------------------------------- */
+/* Buttons */
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #b18e4f;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 1px solid var(--divider);
+  color: var(--foreground);
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: var(--muted);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  animation: fadeInUp 0.8s ease both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

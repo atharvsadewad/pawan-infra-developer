@@ -3,9 +3,20 @@ import Section from "@/components/Section"
 import ServiceCard from "@/components/ServiceCard"
 import ProjectCard from "@/components/ProjectCard"
 import { FaBuilding, FaCity, FaCouch, FaMap } from "react-icons/fa6"
+import Head from "next/head"
+
+<Head>
+  <title>Pawan Infra Developer | Building Landmarks, Defining Skylines</title>
+  <meta
+    name="description"
+    content="Pawan Infra Developer delivers modern, high-quality residential and commercial projects across Pune with trust, innovation, and excellence."
+  />
+</Head>
+
 
 export default function Home() {
   return (
+
     <>
       <Hero />
       <Section id="about" title="About" subtitle="Crafting spaces that inspire and endure." className="bg-white">
@@ -32,6 +43,10 @@ export default function Home() {
           <ProjectCard name="Vista Enclave" type="Mixed-Use" location="Pune, MH" />
         </div>
       </Section>
+      <div className="bg-primary text-white p-4 text-center mt-10 rounded-md">
+  Primary Color Test — If this bar is GOLD, Tailwind custom colors are working!
+</div>
+
     </>
   )
 }
