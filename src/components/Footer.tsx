@@ -5,6 +5,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#1E1E1E] text-white py-14 px-6 mt-20">
       <div className="max-w-7xl mx-auto grid gap-10 md:grid-cols-3">
+        
         {/* Column 1 */}
         <div>
           <h3 className="text-2xl font-semibold text-[#C6A45B] mb-3">
@@ -46,9 +47,20 @@ export default function Footer() {
               <Linkedin className="w-5 h-5 text-gray-400 group-hover:text-[#C6A45B] transition-colors" />
             </a>
           </div>
+
+          {/* Copyright + Designed By */}
           <p className="text-sm text-gray-500 mt-5">
             © {new Date().getFullYear()} Pawan Infra Developer
-            <br /> Designed by <span className="text-[#C6A45B] font-medium">Atharv</span>
+            <br />
+            Designed by{" "}
+            <a
+              href="https://fathersmedia.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#C6A45B] font-medium hover:underline hover:text-[#d6b76b] transition-colors"
+            >
+              Father’s Media
+            </a>
           </p>
         </div>
       </div>
