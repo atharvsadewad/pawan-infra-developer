@@ -117,3 +117,23 @@ section {
     color: #ccc !important;
   }
 }
+@media (prefers-color-scheme: dark) {
+  section {
+    background-color: #0f0f0f;
+  }
+
+  h1, h2, h3, h4 {
+    color: #f3f3f3;
+  }
+
+  p {
+    color: #cfcfcf;
+  }
+
+  footer {
+    background-color: #111111 !important;
+  }
+}
+html {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
