@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import GeometricBackground from "@/components/GeometricBackground"
+import { useRouter } from "next/router"
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -18,13 +19,17 @@ export default function Navbar() {
   const [isProjectsOpen, setIsProjectsOpen] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
+  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const router = useRouter()
 
+  // Handle scroll state for navbar shadow
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 10)
     window.addEventListener("scroll", onScroll)
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
+  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -33,6 +38,20 @@ export default function Navbar() {
     }
     document.addEventListener("mousedown", handleClickOutside)
     return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [])
+
+  // Auto-close dropdown on route change
+  useEffect(() => {
+    const handleRouteChange = () => setIsProjectsOpen(false)
+    router.events.on("routeChangeStart", handleRouteChange)
+    return () => router.events.off("routeChangeStart", handleRouteChange)
+  }, [router])
+
+  // Auto-close on scroll
+  useEffect(() => {
+    const closeOnScroll = () => setIsProjectsOpen(false)
+    window.addEventListener("scroll", closeOnScroll)
+    return () => window.removeEventListener("scroll", closeOnScroll)
   }, [])
 
   return (
@@ -47,6 +66,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           href="/"
+          onClick={() => setIsProjectsOpen(false)}
           className="text-xl font-semibold tracking-wide text-gray-900 dark:text-gray-200"
         >
           Pawan Infra Developer
@@ -56,26 +76,32 @@ export default function Navbar() {
         <ul className="hidden md:flex gap-8">
           {navItems.map((item) => (
             <li key={item.href}>
-              <button
-                onMouseEnter={() =>
-                  item.label === "Projects" && setIsProjectsOpen(true)
-                }
-                onMouseLeave={() =>
-                  item.label === "Projects" &&
-                  setTimeout(() => setIsProjectsOpen(false), 150)
-                }
-                onClick={() =>
-                  item.label === "Projects" &&
-                  setIsProjectsOpen(!isProjectsOpen)
-                }
+              <Link
+                href={item.href}
+                onClick={() => {
+                  setIsProjectsOpen(false)
+                  setMenuOpen(false)
+                }}
+                onMouseEnter={() => {
+                  if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current)
+                  if (item.label === "Projects") setIsProjectsOpen(true)
+                }}
+                onMouseLeave={() => {
+                  if (item.label === "Projects") {
+                    closeTimeoutRef.current = setTimeout(
+                      () => setIsProjectsOpen(false),
+                      200
+                    )
+                  }
+                }}
                 className={`text-sm font-medium transition-colors ${
                   item.label === "Projects" && isProjectsOpen
-                    ? "text-[#C6A45B]"
+                    ? "text-[#C6A45B] font-semibold"
                     : "text-gray-700 hover:text-[#C6A45B] dark:text-gray-300 dark:hover:text-[#C6A45B]"
                 }`}
               >
                 {item.label}
-              </button>
+              </Link>
             </li>
           ))}
         </ul>
@@ -88,11 +114,20 @@ export default function Navbar() {
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/* 🔶 Full-width Projects Dropdown Overlay */}
+        {/* Full-width Dropdown */}
         <AnimatePresence>
           {isProjectsOpen && (
             <motion.div
               ref={dropdownRef}
+              onMouseEnter={() => {
+                if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current)
+              }}
+              onMouseLeave={() => {
+                closeTimeoutRef.current = setTimeout(
+                  () => setIsProjectsOpen(false),
+                  200
+                )
+              }}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
