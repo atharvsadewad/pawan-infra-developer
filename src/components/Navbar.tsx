@@ -27,7 +27,10 @@ export default function Navbar() {
   return (
     <motion.header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/80 backdrop-blur-md shadow-sm dark:bg-[#111111]/70" : "bg-white/50 backdrop-blur-sm dark:bg-[#0d0d0d]/60"
+        isScrolled
+        ? "bg-white/80 backdrop-blur-md shadow-sm dark:bg-[#141414]/80"
+        : "bg-white/50 backdrop-blur-sm dark:bg-[#0f0f0f]/70"
+
       }`}
       initial={{ y: -80 }}
       animate={{ y: 0 }}
@@ -48,9 +51,10 @@ export default function Navbar() {
                 <Link
                   href={item.href}
                   className={`relative text-sm font-medium transition-colors ${
-                    active
-                      ? "text-[#C6A45B]"
-                      : "text-gray-700 hover:text-[#C6A45B] dark:text-gray-300 dark:hover:text-[#C6A45B]"
+                   active
+                    ? "text-[#C6A45B]" 
+                    : "text-gray-700 hover:text-[#C6A45B] dark:text-gray-200 dark:hover:text-[#C6A45B]"
+
                   }`}
                 >
                   {item.label}
