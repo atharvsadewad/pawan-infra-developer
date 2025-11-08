@@ -43,9 +43,10 @@ export default function App({ Component, pageProps }: AppProps) {
 
       <div className={`${inter.className} ${poppins.className}`}>
         <Navbar />
-        <main className="pt-20">
-          <Component {...pageProps} />
-        </main>
+       <main className="pt-16 sm:pt-20">
+         <Component {...pageProps} />
+       </main>
+
 
         {/* ✅ Floating Enquiry Button */}
         <FloatingCTA />
