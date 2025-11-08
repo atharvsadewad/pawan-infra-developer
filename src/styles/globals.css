@@ -91,3 +91,29 @@ section {
     transform: translateY(0);
   }
 }
+/* 🌙 Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #0d0d0d;
+    color: #e5e5e5;
+  }
+
+  header,
+  footer {
+    background-color: #111111 !important;
+  }
+
+  .btn-outline {
+    border-color: #444;
+    color: #e5e5e5;
+  }
+
+  .btn-outline:hover {
+    background-color: #1a1a1a;
+  }
+
+  .text-gray-600,
+  .text-gray-700 {
+    color: #ccc !important;
+  }
+}
