@@ -14,6 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
   <title>Pawan Infra Developer | Trusted Construction & Real Estate in Pune</title>
+  <meta name="color-scheme" content="light dark" />
   <meta name="description"
         content="Pawan Infra Developer — crafting modern residential and commercial spaces across Pune with quality, innovation and trust." />
   <meta name="keywords"
