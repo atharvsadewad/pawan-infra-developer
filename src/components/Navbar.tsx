@@ -2,6 +2,7 @@ import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
+import GeometricBackground from "@/components/GeometricBackground"
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -24,7 +25,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  // Close dropdown if clicked outside
+  // Close dropdown when clicked outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -44,7 +45,11 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link href="/" className="text-xl font-semibold tracking-wide text-gray-900 dark:text-gray-200">
+        {/* Logo */}
+        <Link
+          href="/"
+          className="text-xl font-semibold tracking-wide text-gray-900 dark:text-gray-200"
+        >
           Pawan Infra Developer
         </Link>
 
@@ -54,11 +59,19 @@ export default function Navbar() {
             <li
               key={item.href}
               className="relative"
-              onMouseEnter={() => item.label === "Projects" && setIsProjectsOpen(true)}
-              onMouseLeave={() => setIsProjectsOpen(false)}
+              onMouseEnter={() =>
+                item.label === "Projects" && setIsProjectsOpen(true)
+              }
+              onMouseLeave={() =>
+                item.label === "Projects" &&
+                setTimeout(() => setIsProjectsOpen(false), 100)
+              }
             >
               <button
-                onClick={() => item.label === "Projects" && setIsProjectsOpen(!isProjectsOpen)}
+                onClick={() =>
+                  item.label === "Projects" &&
+                  setIsProjectsOpen(!isProjectsOpen)
+                }
                 className={`text-sm font-medium transition-colors ${
                   item.label === "Projects" && isProjectsOpen
                     ? "text-[#C6A45B]"
@@ -78,34 +91,45 @@ export default function Navbar() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.3 }}
-                      className="absolute left-0 top-full w-screen bg-black/60 backdrop-blur-xl text-white py-10"
+                      className="absolute left-0 top-full w-screen bg-black/60 backdrop-blur-xl text-white py-10 shadow-[0_8px_32px_rgba(0,0,0,0.3)]"
                     >
-                      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-12 px-8">
+                      {/* 🔶 Animated geometric background */}
+                      <GeometricBackground />
+
+                      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-12 px-8 relative z-10">
                         {/* Residential */}
                         <div>
-                          <h3 className="text-lg font-semibold mb-4 text-[#C6A45B]">Residential</h3>
+                          <h3 className="text-lg font-semibold mb-4 text-[#C6A45B]">
+                            Residential
+                          </h3>
                           <ul className="space-y-2 text-gray-300">
                             <li>Lodha Villa Imperio – Palava</li>
                             <li>Aurum Residences – Pune</li>
                             <li>Casa Belvedere – Mumbai</li>
                           </ul>
-                          <button className="mt-4 text-sm text-[#C6A45B] hover:underline">View all</button>
+                          <button className="mt-4 text-sm text-[#C6A45B] hover:text-[#d6b76b] hover:underline transition-all duration-300">
+                            View all
+                          </button>
                         </div>
 
                         {/* Commercial */}
                         <div>
-                          <h3 className="text-lg font-semibold mb-4 text-[#C6A45B]">Commercial</h3>
+                          <h3 className="text-lg font-semibold mb-4 text-[#C6A45B]">
+                            Commercial
+                          </h3>
                           <ul className="space-y-2 text-gray-300">
                             <li>Retail Complex – Pune</li>
                             <li>Warehouse Hub – Nashik</li>
                             <li>Corporate Park – Palava</li>
                           </ul>
-                          <button className="mt-4 text-sm text-[#C6A45B] hover:underline">View all</button>
+                          <button className="mt-4 text-sm text-[#C6A45B] hover:text-[#d6b76b] hover:underline transition-all duration-300">
+                            View all
+                          </button>
                         </div>
                       </div>
 
                       {/* Search Bar */}
-                      <div className="mt-10 flex justify-center">
+                      <div className="mt-10 flex justify-center relative z-10">
                         <input
                           type="text"
                           placeholder="Search a project name or location..."
