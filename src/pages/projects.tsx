@@ -1,56 +1,91 @@
 import { motion } from "framer-motion"
-import Head from "next/head"
-
-<>
-  <Head>
-    <title>Projects | Pawan Infra Developer</title>
-    <meta name="description"
-          content="Explore ongoing and upcoming projects by Pawan Infra Developer — blending architectural excellence, innovation, and modern design." />
-  </Head>
-  {/* rest of your section */}
-</>
-
+import Link from "next/link"
 
 export default function Projects() {
-  const projects = [
-    { name: "Project A", location: "Pune", status: "Coming Soon" },
-    { name: "Project B", location: "Baner", status: "Coming Soon" },
-    { name: "Project C", location: "Kothrud", status: "Coming Soon" },
-  ]
-
   return (
-    <section className="min-h-screen bg-[#FAFAFA] py-24 px-6">
-      <div className="mx-auto max-w-7xl text-center">
-        <h2 className="text-4xl font-semibold text-[#1E1E1E] mb-6 relative inline-block after:absolute after:w-20 after:h-[3px] after:bg-[#C6A45B] after:left-1/2 after:-translate-x-1/2 after:-bottom-3">
-          Our Projects
-        </h2>
-        <p className="text-gray-600 max-w-2xl mx-auto mt-6">
-          Explore our upcoming developments that blend architectural excellence with modern living.
-        </p>
-      </div>
+    <section className="relative overflow-hidden bg-gradient-to-b from-white to-gray-50 dark:from-[#0a0a0a] dark:to-[#111111] py-20">
+      {/* Background Blur Overlay */}
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-md"></div>
 
-      <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
-        {projects.map((project, i) => (
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
+        {/* Title */}
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-3xl md:text-4xl font-semibold text-white mb-12"
+        >
+          Our Projects
+        </motion.h2>
+
+        {/* Project Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {/* Residential */}
           <motion.div
-            key={i}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: i * 0.1 }}
-            viewport={{ once: true }}
-            className="group relative bg-white rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.05)] overflow-hidden hover:-translate-y-1 transition-all duration-300"
+            transition={{ duration: 0.8 }}
+            className="text-white"
           >
-            <div className="h-60 bg-[url('/assets/project-placeholder.jpg')] bg-cover bg-center" />
-            <div className="p-6 text-left">
-              <h3 className="text-xl font-semibold text-gray-900 group-hover:text-[#C6A45B] transition-colors">
-                {project.name}
-              </h3>
-              <p className="text-gray-500 text-sm mt-1">{project.location}</p>
-              <span className="inline-block mt-4 text-sm text-[#C6A45B] font-medium">
-                {project.status}
-              </span>
-            </div>
+            <h3 className="text-xl font-semibold mb-4 text-[#C6A45B]">Residential</h3>
+            <ul className="space-y-2 text-gray-300">
+              <li>
+                <span className="font-medium text-white">Aurum Residences</span> — Pune, MH
+              </li>
+              <li>
+                <span className="font-medium text-white">Vista Enclave</span> — Mumbai, MH
+              </li>
+              <li>
+                <span className="font-medium text-white">Terra Square</span> — Palava, MH
+              </li>
+            </ul>
+            <Link
+              href="#"
+              className="mt-4 inline-block text-sm text-[#C6A45B] hover:underline hover:text-[#d6b76b]"
+            >
+              View all
+            </Link>
           </motion.div>
-        ))}
+
+          {/* Commercial */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-white"
+          >
+            <h3 className="text-xl font-semibold mb-4 text-[#C6A45B]">Commercial</h3>
+            <ul className="space-y-2 text-gray-300">
+              <li>Office Complex — Pune</li>
+              <li>Retail Plaza — Mumbai</li>
+              <li>Warehouse Hub — Palava</li>
+              <li>Plots & Industrial Spaces — Nashik</li>
+            </ul>
+            <Link
+              href="#"
+              className="mt-4 inline-block text-sm text-[#C6A45B] hover:underline hover:text-[#d6b76b]"
+            >
+              View all
+            </Link>
+          </motion.div>
+        </div>
+
+        {/* Search Bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-14 max-w-lg mx-auto relative"
+        >
+          <input
+            type="text"
+            placeholder="Search a project name or location..."
+            className="w-full rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-gray-100 placeholder-gray-400 py-3 px-5 focus:outline-none focus:ring-2 focus:ring-[#C6A45B]/60 transition-all"
+          />
+          <button className="absolute right-3 top-2.5 bg-[#C6A45B] text-white px-4 py-1.5 rounded-full text-sm hover:bg-[#b48e4f]">
+            Search
+          </button>
+        </motion.div>
       </div>
     </section>
   )
