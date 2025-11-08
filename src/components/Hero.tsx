@@ -27,7 +27,10 @@ export default function Hero() {
             <Link href="/projects" className="btn-primary">
               Explore Projects
             </Link>
-            <Link href="/contact" className="btn-outline">
+            <Link href="/contact"
+              className="rounded-md border border-gray-400 px-5 py-3 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-[#1a1a1a]"
+              >
+
               Contact Us
             </Link>
           </div>
