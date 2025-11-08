@@ -23,14 +23,17 @@ export default function Hero() {
             with trust, innovation, and a commitment to timeless design.
           </p>
 
-          <div className="mt-10 flex gap-4">
-            <Link href="/projects" className="btn-primary">
+          <div className="mt-8 flex gap-4">
+            <Link 
+              href="/projects"
+              className="rounded-full bg-[#C6A45B] px-6 py-3 text-sm font-medium text-white shadow hover:bg-[#b48e4f] transition-all duration-200"
+              >
               Explore Projects
             </Link>
-            <Link href="/contact"
-              className="rounded-md border border-gray-400 px-5 py-3 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-[#1a1a1a]"
+            <Link
+              href="/contact"
+              className="rounded-full border border-gray-400 px-6 py-3 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-[#1a1a1a] transition-all duration-200"
               >
-
               Contact Us
             </Link>
           </div>
