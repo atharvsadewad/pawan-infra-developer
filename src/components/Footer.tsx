@@ -1,68 +1,77 @@
-import Link from "next/link"
-import { Facebook, Instagram, Linkedin } from "lucide-react"
-
 export default function Footer() {
   return (
-    <footer className="bg-[#f9f9f9] text-gray-700 dark:bg-[#0E0E0E] dark:text-gray-300 py-14 px-6 mt-20 transition-colors duration-500">
-      <div className="max-w-7xl mx-auto grid gap-10 md:grid-cols-3">
-        
-        {/* Column 1 */}
+    <footer className="bg-[#FAFAFA] dark:bg-[#0d0d0d] text-gray-700 dark:text-gray-300 py-14 px-6 mt-20 border-t border-gray-200/60 dark:border-gray-800/60">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-10 text-center sm:text-left">
+        {/* Brand Info */}
         <div>
-          <h3 className="text-2xl font-semibold text-[#C6A45B] mb-3">
+          <h3 className="text-xl font-semibold text-[#C6A45B] mb-3">
             Pawan Infra Developer
           </h3>
-          <p className="text-gray-400 text-sm leading-relaxed">
-            Building spaces that inspire trust, comfort, and excellence across Pune and beyond.
+          <p className="text-sm leading-relaxed">
+            Building spaces that inspire trust, comfort, and
+            excellence across Pune and beyond.
           </p>
+
+          {/* Company Address */}
+          <div className="mt-5 text-sm leading-relaxed">
+            <p className="font-medium text-[#C6A45B] mb-1">Office Address:</p>
+            <p>
+              Shop No. 2, Matoshree Bungalow, Walhekarwadi,
+              <br />
+              Chinchwad, Pune – 411033, Maharashtra, India
+            </p>
+            <p className="mt-3">
+              📞 +91 91124 08999 / +91 98223 45275
+              <br />
+              ✉️ infradeveloperspawan@gmail.com
+            </p>
+          </div>
         </div>
 
-        {/* Column 2 */}
-        <div className="md:text-center">
-          <h4 className="text-lg font-semibold mb-4 text-[#C6A45B]">Quick Links</h4>
-          <ul className="space-y-2 text-gray-400">
-            {["Home", "About", "Projects", "Services", "Gallery", "Contact"].map((page) => (
-              <li key={page}>
-                <Link
-                  href={`/${page === "Home" ? "" : page.toLowerCase()}`}
-                  className="relative hover:text-[#C6A45B] transition-colors after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#C6A45B] hover:after:w-full after:transition-all after:duration-300"
-                >
-                  {page}
-                </Link>
-              </li>
-            ))}
+        {/* Quick Links */}
+        <div>
+          <h3 className="text-lg font-semibold text-[#C6A45B] mb-3">Quick Links</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="/" className="hover:text-[#C6A45B] transition">Home</a></li>
+            <li><a href="/about" className="hover:text-[#C6A45B] transition">About</a></li>
+            <li><a href="/projects" className="hover:text-[#C6A45B] transition">Projects</a></li>
+            <li><a href="/services" className="hover:text-[#C6A45B] transition">Services</a></li>
+            <li><a href="/gallery" className="hover:text-[#C6A45B] transition">Gallery</a></li>
+            <li><a href="/contact" className="hover:text-[#C6A45B] transition">Contact</a></li>
           </ul>
         </div>
 
-        {/* Column 3 */}
-        <div className="md:text-right">
-          <h4 className="text-lg font-semibold mb-4 text-[#C6A45B]">Connect With Us</h4>
-          <div className="flex md:justify-end gap-4">
-            <a href="#" className="group">
-              <Facebook className="w-5 h-5 text-gray-400 group-hover:text-[#C6A45B] transition-colors" />
+        {/* Social Links */}
+        <div>
+          <h3 className="text-lg font-semibold text-[#C6A45B] mb-3">Connect With Us</h3>
+          <div className="flex justify-center sm:justify-start gap-5 text-xl">
+            <a href="#" className="hover:text-[#C6A45B] transition">
+              <i className="fab fa-facebook"></i>
             </a>
-            <a href="#" className="group">
-              <Instagram className="w-5 h-5 text-gray-400 group-hover:text-[#C6A45B] transition-colors" />
+            <a href="#" className="hover:text-[#C6A45B] transition">
+              <i className="fab fa-instagram"></i>
             </a>
-            <a href="#" className="group">
-              <Linkedin className="w-5 h-5 text-gray-400 group-hover:text-[#C6A45B] transition-colors" />
+            <a href="#" className="hover:text-[#C6A45B] transition">
+              <i className="fab fa-linkedin"></i>
             </a>
           </div>
-
-          {/* Copyright + Designed By */}
-          <p className="text-sm text-gray-500 mt-5">
-            © {new Date().getFullYear()} Pawan Infra Developer
-            <br />
-            Designed by{" "}
-            <a
-              href="https://fathersmedia.in"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#C6A45B] font-medium hover:underline hover:text-[#d6b76b] transition-colors"
-            >
-              Father’s Media
-            </a>
-          </p>
         </div>
+      </div>
+
+      {/* Bottom Line */}
+      <div className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400 border-t border-gray-200/50 dark:border-gray-800/50 pt-6">
+        © 2025 Pawan Infra Developer. All rights reserved.{" "}
+        <br className="sm:hidden" />
+        Designed by{" "}
+        <a
+          href="https://fathersmedia.in"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#C6A45B] font-medium hover:underline"
+        >
+          Father’s Media
+        </a>
+        .
       </div>
     </footer>
   )
