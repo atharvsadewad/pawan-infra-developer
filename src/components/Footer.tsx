@@ -12,17 +12,15 @@ export default function Footer() {
             excellence across Pune and beyond.
           </p>
 
-          {/* Company Address */}
-          <div className="mt-5 text-sm leading-relaxed">
-            <p className="font-medium text-[#C6A45B] mb-1">Office Address:</p>
+          <div className="mt-5 text-sm leading-relaxed space-y-2">
+            <p className="font-medium text-[#C6A45B]">Office Address:</p>
             <p>
               Shop No. 2, Matoshree Bungalow, Walhekarwadi,
               <br />
               Chinchwad, Pune – 411033, Maharashtra, India
             </p>
             <p className="mt-3">
-              📞 +91 91124 08999 / +91 98223 45275
-              <br />
+              📞 +91 91124 08999 / +91 98223 45275 <br />
               ✉️ infradeveloperspawan@gmail.com
             </p>
           </div>
@@ -41,10 +39,10 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Social Links */}
+        {/* Connect With Us */}
         <div>
           <h3 className="text-lg font-semibold text-[#C6A45B] mb-3">Connect With Us</h3>
-          <div className="flex justify-center sm:justify-start gap-5 text-xl">
+          <div className="flex justify-center sm:justify-start gap-5 text-xl mb-4">
             <a href="#" className="hover:text-[#C6A45B] transition">
               <i className="fab fa-facebook"></i>
             </a>
@@ -55,23 +53,20 @@ export default function Footer() {
               <i className="fab fa-linkedin"></i>
             </a>
           </div>
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            © 2025 Pawan Infra Developer. All rights reserved. <br />
+            Designed by{" "}
+            <a
+              href="https://fathersmedia.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#C6A45B] font-medium hover:underline"
+            >
+              Father’s Media
+            </a>
+            .
+          </p>
         </div>
-      </div>
-
-      {/* Bottom Line */}
-      <div className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400 border-t border-gray-200/50 dark:border-gray-800/50 pt-6">
-        © 2025 Pawan Infra Developer. All rights reserved.{" "}
-        <br className="sm:hidden" />
-        Designed by{" "}
-        <a
-          href="https://fathersmedia.in"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[#C6A45B] font-medium hover:underline"
-        >
-          Father’s Media
-        </a>
-        .
       </div>
     </footer>
   )
