@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-white to-gray-50 dark:from-[#111111] dark:to-[#1a1a1a] transition-colors duration-500">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 pt-36 pb-20 md:grid-cols-2">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 pt-28 pb-20 md:pt-36 md:grid-cols-2">
         
         {/* Left Text */}
         <motion.div
@@ -12,7 +12,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl font-semibold tracking-tight text-gray-900 dark:text-gray-100 md:text-5xl">
+          <h1 className="text-3xl font-semibold tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl md:text-5xl leading-tight">
 
             <span className="text-[#C6A45B]">Building</span> Dreams,<br />
             Shaping <span className="underline decoration-[#C6A45B]/70">Landmarks</span>.
