@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#FAFAFA] to-[#F2F2F2]">
+    <section className="relative overflow-hidden bg-gradient-to-b from-white to-gray-50 dark:from-[#111111] dark:to-[#1a1a1a] transition-colors duration-500">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 pt-36 pb-20 md:grid-cols-2">
         
         {/* Left Text */}
@@ -12,12 +12,13 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl md:text-6xl font-semibold text-[#1E1E1E] leading-tight">
+          <h1 className="text-4xl font-semibold tracking-tight text-gray-900 dark:text-gray-100 md:text-5xl">
+
             <span className="text-[#C6A45B]">Building</span> Dreams,<br />
             Shaping <span className="underline decoration-[#C6A45B]/70">Landmarks</span>.
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg text-gray-600 leading-relaxed">
+          <p className="mt-4 max-w-xl text-base text-gray-600 dark:text-gray-400">
             Pawan Infra Developer crafts elegant residential and commercial projects
             with trust, innovation, and a commitment to timeless design.
           </p>
