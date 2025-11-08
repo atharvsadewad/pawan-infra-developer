@@ -1,11 +1,13 @@
-/* ✅ Google Fonts must come FIRST */
+/* ------------------------------------------------ */
+/* 1️⃣ Google Fonts (must come first) */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@400;500;600;700&display=swap');
 
-/* ✅ Tailwind must come SECOND */
+/* ------------------------------------------------ */
+/* 2️⃣ Tailwind CSS Core */
 @import "tailwindcss";
 
-/* --------------------------------------------- */
-/* Global Theme Variables */
+/* ------------------------------------------------ */
+/* 3️⃣ Theme Variables (Light Default) */
 :root {
   --background: #FAFAFA;
   --foreground: #1E1E1E;
@@ -14,35 +16,30 @@
   --divider: #E5E5E5;
 }
 
-/* --------------------------------------------- */
-/* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ------------------------------------------------ */
+/* 4️⃣ Base Global Styles */
+html {
+  scroll-behavior: smooth;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-/* --------------------------------------------- */
-/* Base Styles */
 body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: 'Inter', sans-serif;
-  scroll-behavior: smooth; /* ✅ simple, native smooth scroll */
+  scroll-behavior: smooth;
 }
 
-/* --------------------------------------------- */
 /* Headings */
 h1, h2, h3, h4 {
   font-family: 'Poppins', sans-serif;
   letter-spacing: -0.02em;
 }
 
-/* --------------------------------------------- */
-/* Section Padding */
+/* Section spacing and scroll anchor offset */
 section {
   scroll-margin-top: 5rem;
+  animation: fadeInUp 0.8s ease both;
 }
 
 /* --------------------------------------------- */
@@ -73,14 +70,8 @@ section {
   background-color: var(--muted);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-section {
-  animation: fadeInUp 0.8s ease both;
-}
-
+/* --------------------------------------------- */
+/* Section Animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -91,8 +82,15 @@ section {
     transform: translateY(0);
   }
 }
-/* 🌙 Dark Mode Styles */
+
+/* ------------------------------------------------ */
+/* 5️⃣ Dark Mode Styles */
 @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+
   body {
     background-color: #0d0d0d;
     color: #e5e5e5;
@@ -101,6 +99,18 @@ section {
   header,
   footer {
     background-color: #111111 !important;
+  }
+
+  section {
+    background-color: #0f0f0f;
+  }
+
+  h1, h2, h3, h4 {
+    color: #f3f3f3;
+  }
+
+  p {
+    color: #cfcfcf;
   }
 
   .btn-outline {
@@ -116,24 +126,9 @@ section {
   .text-gray-700 {
     color: #ccc !important;
   }
-}
-@media (prefers-color-scheme: dark) {
-  section {
-    background-color: #0f0f0f;
-  }
 
-  h1, h2, h3, h4 {
-    color: #f3f3f3;
+  /* Light glow shadows for dark background */
+  .shadow-[0_4px_30px_rgba(0,0,0,0.05)] {
+    box-shadow: 0 4px 30px rgba(255,255,255,0.05) !important;
   }
-
-  p {
-    color: #cfcfcf;
-  }
-
-  footer {
-    background-color: #111111 !important;
-  }
-}
-html {
-  transition: background-color 0.5s ease, color 0.5s ease;
 }
