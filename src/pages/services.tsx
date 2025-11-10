@@ -1,70 +1,107 @@
 import { motion } from "framer-motion"
-import { Home, Building2, Ruler, Map } from "lucide-react"
 import Head from "next/head"
-
-<>
-  <Head>
-    <title>Services | Pawan Infra Developer</title>
-    <meta name="description"
-          content="From residential to commercial and interior design, Pawan Infra Developer provides end-to-end construction services built on quality and trust." />
-  </Head>
-  {/* rest of your section */}
-</>
-
-
-const services = [
-  {
-    icon: <Home className="w-10 h-10 text-[#C6A45B]" />,
-    title: "Residential Construction",
-    desc: "We craft modern homes with attention to detail, quality materials, and elegant design.",
-  },
-  {
-    icon: <Building2 className="w-10 h-10 text-[#C6A45B]" />,
-    title: "Commercial Development",
-    desc: "We develop smart commercial spaces that inspire growth and collaboration.",
-  },
-  {
-    icon: <Ruler className="w-10 h-10 text-[#C6A45B]" />,
-    title: "Interior & Architecture",
-    desc: "Our design philosophy blends functionality with aesthetic sophistication.",
-  },
-  {
-    icon: <Map className="w-10 h-10 text-[#C6A45B]" />,
-    title: "Land Development",
-    desc: "We convert land into sustainable, well-planned communities for the future.",
-  },
-]
+import { Home, Building2, Hammer, Paintbrush, Settings, Factory, Warehouse, Box, Ruler, Snowflake, Building } from "lucide-react"
+import ServiceCard from "@/components/ServiceCard"
 
 export default function Services() {
   return (
-    <section className="min-h-screen bg-white py-24 px-6">
-      <div className="mx-auto max-w-7xl text-center">
-        <h2 className="text-4xl font-semibold text-[#1E1E1E] mb-6 relative inline-block after:absolute after:w-20 after:h-[3px] after:bg-[#C6A45B] after:left-1/2 after:-translate-x-1/2 after:-bottom-3">
-          Our Services
-        </h2>
-        <p className="text-gray-600 max-w-2xl mx-auto mt-6">
-          Delivering excellence across every aspect of construction and design.
-        </p>
-      </div>
+    <>
+      <Head>
+        <title>Services | Pawan Infra Developer</title>
+        <meta
+          name="description"
+          content="Explore a complete range of construction and infrastructure services by Pawan Infra Developer — from residential and commercial buildings to industrial projects and turnkey solutions."
+        />
+      </Head>
 
-      <div className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto">
-        {services.map((service, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: i * 0.1 }}
-            viewport={{ once: true }}
-            className="group bg-[#FAFAFA] rounded-2xl p-8 shadow-[0_4px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.1)] transition-all duration-300 text-center hover:-translate-y-1"
-          >
-            <div className="flex justify-center mb-5">{service.icon}</div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-[#C6A45B] transition-colors">
-              {service.title}
-            </h3>
-            <p className="text-gray-600 text-sm leading-relaxed">{service.desc}</p>
-          </motion.div>
-        ))}
-      </div>
-    </section>
+      <section className="min-h-screen bg-white dark:bg-[#0d0d0d] py-24 px-6 transition-colors duration-500">
+        <div className="mx-auto max-w-7xl text-center">
+          <h2 className="text-4xl font-semibold text-[#1E1E1E] dark:text-gray-100 mb-6 relative inline-block after:absolute after:w-20 after:h-[3px] after:bg-[#C6A45B] after:left-1/2 after:-translate-x-1/2 after:-bottom-3">
+            Our Services
+          </h2>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-6">
+            Delivering excellence across every aspect of construction and infrastructure development — designed with precision, trust, and innovation.
+          </p>
+        </div>
+
+        {/* CATEGORY 1 */}
+        <div className="mt-20 max-w-7xl mx-auto">
+          <h3 className="text-2xl font-semibold text-[#C6A45B] mb-10 text-center">
+            Construction & Building Services
+          </h3>
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+            <ServiceCard
+              icon={<Home className="w-8 h-8" />}
+              title="Residential Building Construction"
+              description="Bungalows, apartments, and villas built with quality, comfort, and modern design."
+            />
+            <ServiceCard
+              icon={<Building2 className="w-8 h-8" />}
+              title="Commercial & Industrial Construction"
+              description="Premium commercial spaces and industrial structures that combine aesthetics with functionality."
+            />
+            <ServiceCard
+              icon={<Paintbrush className="w-8 h-8" />}
+              title="Interior & Exterior Finishing Works"
+              description="Elegant interior and exterior design finishes that elevate every project."
+            />
+            <ServiceCard
+              icon={<Hammer className="w-8 h-8" />}
+              title="Renovation, Remodeling & Repair Works"
+              description="Expert renovation and remodeling services to modernize and restore properties."
+            />
+            <ServiceCard
+              icon={<Settings className="w-8 h-8" />}
+              title="Turnkey Projects (Design + Build)"
+              description="End-to-end project handling from design to construction, ensuring seamless execution."
+            />
+            <ServiceCard
+              icon={<Ruler className="w-8 h-8" />}
+              title="Labor & Material Contracts"
+              description="Flexible contracting options for all kinds of construction projects."
+            />
+          </div>
+        </div>
+
+        {/* CATEGORY 2 */}
+        <div className="mt-24 max-w-7xl mx-auto">
+          <h3 className="text-2xl font-semibold text-[#C6A45B] mb-10 text-center">
+            Industrial Construction Works
+          </h3>
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+            <ServiceCard
+              icon={<Factory className="w-8 h-8" />}
+              title="Industrial Sheds, Factories & Warehouses"
+              description="Durable, efficient industrial sheds and factory constructions designed to last."
+            />
+            <ServiceCard
+              icon={<Warehouse className="w-8 h-8" />}
+              title="Godowns & Storage Units"
+              description="Custom-built storage spaces ensuring optimal utility and safety."
+            />
+            <ServiceCard
+              icon={<Box className="w-8 h-8" />}
+              title="Heavy Foundation Works for Machinery"
+              description="Robust and precise foundation work suited for large industrial machines."
+            />
+            <ServiceCard
+              icon={<Building className="w-8 h-8" />}
+              title="Pre-Engineered Buildings (PEB)"
+              description="Efficient PEB and steel structures for cost-effective industrial solutions."
+            />
+            <ServiceCard
+              icon={<Ruler className="w-8 h-8" />}
+              title="RCC & Steel Industrial Buildings"
+              description="Strong, sustainable industrial building construction for long-term operations."
+            />
+            <ServiceCard
+              icon={<Snowflake className="w-8 h-8" />}
+              title="Cold Storage Construction"
+              description="Specialized cold storage facilities designed for reliability and energy efficiency."
+            />
+          </div>
+        </div>
+      </section>
+    </>
   )
 }
