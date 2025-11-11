@@ -212,5 +212,10 @@ export default function Navbar() {
       </div>
     </motion.div>
   )}
-</AnimatePresence>
+        </AnimatePresence>
+      </nav>
+    </header>  {/* ✅ closing tag was missing */}
+  )
+}
+
 
