@@ -22,14 +22,14 @@ export default function Navbar() {
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   const router = useRouter()
 
-  // Handle scroll state for navbar shadow
+  // Shadow on scroll
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 10)
     window.addEventListener("scroll", onScroll)
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  // Close dropdown when clicking outside
+  // Close dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -40,14 +40,17 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside)
   }, [])
 
-  // Auto-close dropdown on route change
+  // Close dropdown on route change
   useEffect(() => {
-    const handleRouteChange = () => setIsProjectsOpen(false)
+    const handleRouteChange = () => {
+      setIsProjectsOpen(false)
+      setMenuOpen(false)
+    }
     router.events.on("routeChangeStart", handleRouteChange)
     return () => router.events.off("routeChangeStart", handleRouteChange)
   }, [router])
 
-  // Auto-close on scroll
+  // Close dropdown on scroll
   useEffect(() => {
     const closeOnScroll = () => setIsProjectsOpen(false)
     window.addEventListener("scroll", closeOnScroll)
@@ -66,7 +69,10 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           href="/"
-          onClick={() => setIsProjectsOpen(false)}
+          onClick={() => {
+            setIsProjectsOpen(false)
+            setMenuOpen(false)
+          }}
           className="text-xl font-semibold tracking-wide text-gray-900 dark:text-gray-200"
         >
           Pawan Infra Developer
@@ -75,24 +81,23 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8">
           {navItems.map((item) => (
-            <li key={item.href}>
+            <li
+              key={item.href}
+              onMouseEnter={() => {
+                if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current)
+                if (item.label === "Projects") setIsProjectsOpen(true)
+              }}
+              onMouseLeave={() => {
+                if (item.label === "Projects") {
+                  closeTimeoutRef.current = setTimeout(() => setIsProjectsOpen(false), 200)
+                }
+              }}
+            >
               <Link
                 href={item.href}
                 onClick={() => {
                   setIsProjectsOpen(false)
                   setMenuOpen(false)
-                }}
-                onMouseEnter={() => {
-                  if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current)
-                  if (item.label === "Projects") setIsProjectsOpen(true)
-                }}
-                onMouseLeave={() => {
-                  if (item.label === "Projects") {
-                    closeTimeoutRef.current = setTimeout(
-                      () => setIsProjectsOpen(false),
-                      200
-                    )
-                  }
                 }}
                 className={`text-sm font-medium transition-colors ${
                   item.label === "Projects" && isProjectsOpen
@@ -106,7 +111,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Toggle */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden p-2 rounded-md focus:outline-none text-gray-700 dark:text-gray-300"
@@ -114,68 +119,98 @@ export default function Navbar() {
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/* Full-width Dropdown */}
+        {/* ✅ MOBILE DROPDOWN */}
         <AnimatePresence>
-          {isProjectsOpen && (
+          {menuOpen && (
             <motion.div
-              ref={dropdownRef}
-              onMouseEnter={() => {
-                if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current)
-              }}
-              onMouseLeave={() => {
-                closeTimeoutRef.current = setTimeout(
-                  () => setIsProjectsOpen(false),
-                  200
-                )
-              }}
-              initial={{ opacity: 0, y: -10 }}
+              initial={{ opacity: 0, y: -15 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.35 }}
-              className="absolute left-0 top-full w-screen bg-black/60 backdrop-blur-xl text-white py-10 shadow-[0_8px_32px_rgba(0,0,0,0.3)]"
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.3 }}
+              className="absolute top-full left-0 w-full bg-white/95 dark:bg-[#111111]/95 backdrop-blur-md shadow-md rounded-b-xl border-t border-gray-200 dark:border-gray-700 md:hidden"
             >
-              <GeometricBackground />
-
-              <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-12 px-8 relative z-10">
-                {/* Residential */}
-                <div>
-                  <h3 className="text-lg font-semibold mb-4 text-[#C6A45B]">Residential</h3>
-                  <ul className="space-y-2 text-gray-300">
-                    <li>Lodha Villa Imperio – Palava</li>
-                    <li>Aurum Residences – Pune</li>
-                    <li>Casa Belvedere – Mumbai</li>
-                  </ul>
-                  <button className="mt-4 text-sm text-[#C6A45B] hover:text-[#d6b76b] hover:underline transition-all duration-300">
-                    View all
-                  </button>
-                </div>
-
-                {/* Commercial */}
-                <div>
-                  <h3 className="text-lg font-semibold mb-4 text-[#C6A45B]">Commercial</h3>
-                  <ul className="space-y-2 text-gray-300">
-                    <li>Retail Complex – Pune</li>
-                    <li>Warehouse Hub – Nashik</li>
-                    <li>Corporate Park – Palava</li>
-                  </ul>
-                  <button className="mt-4 text-sm text-[#C6A45B] hover:text-[#d6b76b] hover:underline transition-all duration-300">
-                    View all
-                  </button>
-                </div>
-              </div>
-
-              {/* Search Bar */}
-              <div className="mt-10 flex justify-center relative z-10">
-                <input
-                  type="text"
-                  placeholder="Search a project name or location..."
-                  className="w-1/3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-gray-100 placeholder-gray-400 py-3 px-5 focus:outline-none focus:ring-2 focus:ring-[#C6A45B]/60 transition-all"
-                />
-              </div>
+              <ul className="flex flex-col py-4 text-center">
+                {navItems.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className="block py-3 text-gray-800 dark:text-gray-200 hover:text-[#C6A45B] transition-colors"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           )}
         </AnimatePresence>
-      </nav>
-    </header>
-  )
-}
+
+        {/* ✅ PROJECTS DROPDOWN (Desktop Only) */}
+       <AnimatePresence>
+  {isProjectsOpen && (
+    <motion.div
+      ref={dropdownRef}
+      onMouseEnter={() => {
+        if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current)
+      }}
+      onMouseLeave={() => {
+        closeTimeoutRef.current = setTimeout(() => setIsProjectsOpen(false), 200)
+      }}
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -10 }}
+      transition={{ duration: 0.35 }}
+      className="absolute left-0 top-full w-screen bg-gradient-to-b from-[#1a1a1a]/95 via-[#0e0e0e]/90 to-[#1a1a1a]/95 
+                 backdrop-blur-xl text-white pt-10 pb-14 shadow-[0_8px_40px_rgba(0,0,0,0.3)]
+                 rounded-b-[100px] border-t border-[#C6A45B]/20 overflow-hidden hidden md:block relative"
+    >
+      {/* Animated geometric overlay */}
+      <GeometricBackground />
+
+      {/* Decorative golden lines */}
+      <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-[#C6A45B]/60 to-transparent"></div>
+
+      {/* Interior grid content */}
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-12 px-8 relative z-10">
+        {/* Residential */}
+        <div>
+          <h3 className="text-lg font-semibold mb-4 text-[#C6A45B]">Residential</h3>
+          <ul className="space-y-2 text-gray-300">
+            <li>Lodha Villa Imperio – Palava</li>
+            <li>Aurum Residences – Pune</li>
+            <li>Casa Belvedere – Mumbai</li>
+          </ul>
+          <button className="mt-4 text-sm text-[#C6A45B] hover:text-[#d6b76b] hover:underline transition-all duration-300">
+            View all
+          </button>
+        </div>
+
+        {/* Commercial */}
+        <div>
+          <h3 className="text-lg font-semibold mb-4 text-[#C6A45B]">Commercial</h3>
+          <ul className="space-y-2 text-gray-300">
+            <li>Retail Complex – Pune</li>
+            <li>Warehouse Hub – Nashik</li>
+            <li>Corporate Park – Palava</li>
+          </ul>
+          <button className="mt-4 text-sm text-[#C6A45B] hover:text-[#d6b76b] hover:underline transition-all duration-300">
+            View all
+          </button>
+        </div>
+      </div>
+
+      {/* Search Bar */}
+      <div className="mt-10 flex justify-center relative z-10">
+        <input
+          type="text"
+          placeholder="Search a project name or location..."
+          className="w-1/3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 
+                     text-gray-100 placeholder-gray-400 py-3 px-5 
+                     focus:outline-none focus:ring-2 focus:ring-[#C6A45B]/60 transition-all"
+        />
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
+
