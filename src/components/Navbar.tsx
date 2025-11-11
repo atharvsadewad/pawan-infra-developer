@@ -214,7 +214,7 @@ export default function Navbar() {
   )}
         </AnimatePresence>
       </nav>
-    </header>  {/* ✅ closing tag was missing */}
+    </header>
   )
 }
 
