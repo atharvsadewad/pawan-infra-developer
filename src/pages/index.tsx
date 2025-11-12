@@ -21,21 +21,21 @@ export default function Home() {
       <Hero />
 
       {/* ABOUT SNAPSHOT */}
-      <Section
+<Section
   id="about"
   title="About"
   subtitle="Crafting spaces that inspire and endure."
-  className="relative bg-gradient-to-br from-white to-gray-50 overflow-hidden"
+  className="relative bg-gradient-to-br from-white to-gray-50 dark:from-[#0f0f0f] dark:to-[#1a1a1a] overflow-hidden transition-all duration-500"
 >
   {/* 🌐 Subtle geometric background shapes */}
-  <div className="absolute -top-20 -right-24 w-72 h-72 bg-[#C6A45B]/10 rounded-full blur-3xl"></div>
-  <div className="absolute bottom-10 left-10 w-64 h-64 bg-[#C6A45B]/10 rotate-45 rounded-lg blur-2xl"></div>
+  <div className="absolute -top-20 -right-24 w-72 h-72 bg-[#C6A45B]/10 dark:bg-[#C6A45B]/20 rounded-full blur-3xl"></div>
+  <div className="absolute bottom-10 left-10 w-64 h-64 bg-[#C6A45B]/10 dark:bg-[#C6A45B]/20 rotate-45 rounded-lg blur-2xl"></div>
 
   {/* 💬 Actual content */}
   <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
-    <p className="text-gray-600 leading-relaxed">
+    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
       At{" "}
-      <span className="font-semibold text-[#C6A45B]">Pawan Infra Developer</span>,
+      <span className="font-semibold text-[#C6A45B]">Pawan Infra Developer</span>,  
       we combine modern design with quality engineering to create elegant, durable, and well-planned spaces.  
       Based in Pune, we’re driven by a vision to turn construction into an experience of trust and craftsmanship.
     </p>
@@ -44,19 +44,26 @@ export default function Home() {
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-10">
       <div>
         <h3 className="text-3xl font-semibold text-[#C6A45B]">10+</h3>
-        <p className="text-gray-600 text-sm mt-1">Successful Projects</p>
+        <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">
+          Successful Projects
+        </p>
       </div>
       <div>
         <h3 className="text-3xl font-semibold text-[#C6A45B]">7+</h3>
-        <p className="text-gray-600 text-sm mt-1">Years of Experience</p>
+        <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">
+          Years of Experience
+        </p>
       </div>
       <div>
         <h3 className="text-3xl font-semibold text-[#C6A45B]">100%</h3>
-        <p className="text-gray-600 text-sm mt-1">Client Satisfaction</p>
+        <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">
+          Client Satisfaction
+        </p>
       </div>
     </div>
   </div>
 </Section>
+
 
 
       {/* SERVICES OVERVIEW */}
