@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
@@ -68,19 +69,33 @@ export default function Navbar() {
         }`}
       >
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          {/* Logo */}
+          {/* ✅ LOGO + BRAND NAME */}
           <Link
             href="/"
             onClick={() => {
               setIsProjectsOpen(false)
               setMenuOpen(false)
             }}
-            className="text-xl font-semibold tracking-wide text-gray-900 dark:text-gray-200"
+            className="flex items-center gap-2 sm:gap-3 text-lg sm:text-xl font-semibold tracking-wide text-gray-900 dark:text-gray-200"
           >
-            Pawan Infra Developer
+            <motion.div
+              whileHover={{ scale: 1.1, rotate: 3 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="relative"
+            >
+              <Image
+                src="/logo-gold.png" // ✅ use a simple transparent gold logo (add this to /public)
+                alt="Pawan Infra Developer Logo"
+                width={38}
+                height={38}
+                className="rounded-md drop-shadow-[0_0_10px_rgba(198,164,91,0.4)] dark:brightness-95 transition-all"
+                priority
+              />
+            </motion.div>
+            <span>Pawan Infra Developer</span>
           </Link>
 
-          {/* Desktop Menu */}
+          {/* 🟢 Desktop Menu */}
           <ul className="hidden md:flex gap-8">
             {navItems.map((item) => (
               <li
@@ -113,7 +128,7 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* Mobile Toggle */}
+          {/* 🔘 Mobile Toggle */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden p-2 rounded-md focus:outline-none text-gray-700 dark:text-gray-300"
@@ -176,7 +191,6 @@ export default function Navbar() {
             <GeometricBackground />
 
             <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-12 relative z-10">
-              {/* Residential */}
               <div>
                 <h3 className="text-lg font-semibold mb-4 text-[#C6A45B]">Residential</h3>
                 <ul className="space-y-2 text-gray-300">
@@ -189,7 +203,6 @@ export default function Navbar() {
                 </button>
               </div>
 
-              {/* Commercial */}
               <div>
                 <h3 className="text-lg font-semibold mb-4 text-[#C6A45B]">Commercial</h3>
                 <ul className="space-y-2 text-gray-300">
