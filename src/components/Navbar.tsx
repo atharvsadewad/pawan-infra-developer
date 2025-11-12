@@ -22,12 +22,14 @@ export default function Navbar() {
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   const router = useRouter()
 
+  // shadow when scrolled
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 10)
     window.addEventListener("scroll", onScroll)
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
+  // close on outside click
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -38,6 +40,7 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside)
   }, [])
 
+  // close on route change
   useEffect(() => {
     const handleRouteChange = () => {
       setIsProjectsOpen(false)
@@ -47,6 +50,7 @@ export default function Navbar() {
     return () => router.events.off("routeChangeStart", handleRouteChange)
   }, [router])
 
+  // close dropdown on scroll
   useEffect(() => {
     const closeOnScroll = () => setIsProjectsOpen(false)
     window.addEventListener("scroll", closeOnScroll)
@@ -55,8 +59,9 @@ export default function Navbar() {
 
   return (
     <>
+      {/* 🟡 HEADER */}
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        className={`fixed inset-x-0 top-0 z-[60] transition-all duration-300 ${
           isScrolled
             ? "bg-white/80 backdrop-blur-md shadow-sm dark:bg-[#111111]/70"
             : "bg-white/60 backdrop-blur-sm dark:bg-[#0d0d0d]/60"
@@ -108,7 +113,7 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Toggle */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden p-2 rounded-md focus:outline-none text-gray-700 dark:text-gray-300"
@@ -118,7 +123,36 @@ export default function Navbar() {
         </nav>
       </header>
 
-      {/* ✅ Push dropdown BELOW the navbar */}
+      {/* 🟢 MOBILE MENU */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-x-0 top-[72px] z-[100] bg-white/95 dark:bg-[#111111]/95 
+                       backdrop-blur-md shadow-lg border-t border-gray-200 dark:border-gray-700 
+                       rounded-b-2xl md:hidden"
+          >
+            <ul className="flex flex-col py-4 text-center">
+              {navItems.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="block py-3 text-gray-800 dark:text-gray-200 hover:text-[#C6A45B] transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* 🟠 PROJECTS DROPDOWN */}
       <AnimatePresence>
         {isProjectsOpen && (
           <motion.div
@@ -137,7 +171,7 @@ export default function Navbar() {
                        bg-gradient-to-b from-[#1a1a1a]/95 via-[#0e0e0e]/90 to-[#1a1a1a]/95 
                        backdrop-blur-xl text-white py-10 px-8 
                        shadow-[0_8px_40px_rgba(0,0,0,0.3)] 
-                       rounded-[3rem] border border-[#C6A45B]/20 overflow-hidden hidden md:block z-40"
+                       rounded-[3rem] border border-[#C6A45B]/20 overflow-hidden hidden md:block z-[90]"
           >
             <GeometricBackground />
 
