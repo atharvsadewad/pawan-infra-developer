@@ -10,8 +10,6 @@ import Head from "next/head"
   />
 </Head>
 
-import { motion } from "framer-motion"
-
 export default function About() {
   return (
     <section className="min-h-screen bg-[#FAFAFA] dark:bg-[#0f0f0f] py-24 px-6 transition-colors duration-500">
