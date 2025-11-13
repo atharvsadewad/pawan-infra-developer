@@ -3,6 +3,15 @@ import Link from "next/link"
 
 export default function Projects() {
   return (
+        <>
+      <Head>
+        <title>Projects | Pawan Infra Developer</title>
+        <meta
+          name="description"
+          content="Explore a complete range of construction and infrastructure services by Pawan Infra Developer — from residential and commercial buildings to industrial projects and turnkey solutions."
+        />
+      </Head>
+          
     <section className="relative overflow-hidden bg-gradient-to-b from-white to-gray-50 dark:from-[#0a0a0a] dark:to-[#111111] py-20">
       {/* Background Blur Overlay */}
       <div className="absolute inset-0 bg-black/40 backdrop-blur-md"></div>
