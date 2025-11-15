@@ -1,3 +1,4 @@
+// src/pages/index.tsx
 import Hero from "@/components/Hero"
 import Section from "@/components/Section"
 import ServiceCard from "@/components/ServiceCard"
@@ -6,6 +7,7 @@ import { FaBuilding, FaIndustry, FaTools } from "react-icons/fa"
 import Head from "next/head"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function Home() {
   return (
@@ -28,8 +30,8 @@ export default function Home() {
         subtitle="Crafting spaces that inspire and endure."
         className="relative bg-gradient-to-br from-white to-gray-50 dark:from-[#0f0f0f] dark:to-[#1a1a1a] overflow-hidden transition-all duration-500"
       >
-        <div className="absolute -top-20 -right-24 w-72 h-72 bg-[#C6A45B]/10 dark:bg-[#C6A45B]/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-64 h-64 bg-[#C6A45B]/10 dark:bg-[#C6A45B]/20 rotate-45 rounded-lg blur-2xl"></div>
+        <div className="absolute -top-20 -right-24 w-72 h-72 bg-[#C6A45B]/10 dark:bg-[#C6A45B]/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 left-10 w-64 h-64 bg-[#C6A45B]/10 dark:bg-[#C6A45B]/20 rotate-45 rounded-lg blur-2xl" />
 
         <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
           <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -54,8 +56,86 @@ export default function Home() {
               <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">Client Satisfaction</p>
             </div>
           </div>
+
+          {/* Read more to full About page */}
+          <div className="mt-6">
+            <Link href="/about" className="inline-block rounded-full bg-[#C6A45B] px-6 py-3 text-white text-sm font-medium shadow hover:bg-[#b18e4f] transition-all">
+              Read more → 
+            </Link>
+          </div>
         </div>
       </Section>
+
+      {/* ===== LEGACY SECTION (NEW) =====
+          Placed immediately after About and before Services */}
+      <section className="py-16 px-6 bg-white dark:bg-[#070707]">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 dark:text-gray-100">
+              A Legacy of Construction. A Future of Innovation.
+            </h3>
+            <p className="mt-3 max-w-3xl mx-auto text-gray-600 dark:text-gray-300">
+              Pawan Infra Developer stands on the strong foundation built over the years by{" "}
+              <span className="font-semibold text-[#C6A45B]">Gurudevdatta Enterprises</span>, a respected construction firm established and led by Shri Basavraj Patil.
+            </p>
+          </motion.div>
+
+          {/* Timeline / three short blocks */}
+          <div className="mt-10 grid gap-8 md:grid-cols-3 items-start">
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.05 }}
+              viewport={{ once: true }}
+              className="rounded-2xl border border-gray-100 dark:border-gray-800 p-6 text-center bg-white dark:bg-[#0b0b0b] shadow-sm"
+            >
+              <h4 className="text-lg font-semibold text-[#C6A45B] mb-2">Origin</h4>
+              <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                Gurudevdatta Enterprises, led by Shri Basavraj Patil, completed <strong>25+ projects</strong> across Pune & PCMC — building trust and expertise on the ground.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.12 }}
+              viewport={{ once: true }}
+              className="rounded-2xl border border-gray-100 dark:border-gray-800 p-6 text-center bg-white dark:bg-[#0b0b0b] shadow-sm"
+            >
+              <h4 className="text-lg font-semibold text-[#C6A45B] mb-2">Learning the Craft</h4>
+              <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                Growing up around sites and engineering discussions, Pawan learned discipline, workmanship and real on-site problem solving — experience that shapes our approach today.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.18 }}
+              viewport={{ once: true }}
+              className="rounded-2xl border border-gray-100 dark:border-gray-800 p-6 text-center bg-white dark:bg-[#0b0b0b] shadow-sm"
+            >
+              <h4 className="text-lg font-semibold text-[#C6A45B] mb-2">A New Generation</h4>
+              <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                Today, Pawan Infra Developer continues the legacy with <strong>6 ongoing projects</strong>, combining traditional expertise with modern design and transparent execution.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Optional CTA / small attribution row */}
+          <div className="mt-8 text-center">
+            <p className="text-sm text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+              The foundation of our trust is decades of on-ground experience — we bring that same care and discipline to every project we deliver.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* SERVICES OVERVIEW */}
       <Section
@@ -83,12 +163,9 @@ export default function Home() {
         </div>
 
         <div className="text-center mt-10">
-          <a
-            href="/services"
-            className="inline-block rounded-full bg-[#C6A45B] px-6 py-3 text-white text-sm font-medium shadow hover:bg-[#b18e4f] transition-all"
-          >
+          <Link href="/services" className="inline-block rounded-full bg-[#C6A45B] px-6 py-3 text-white text-sm font-medium shadow hover:bg-[#b18e4f] transition-all">
             Explore All Services →
-          </a>
+          </Link>
         </div>
       </Section>
 
@@ -130,10 +207,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOUNDER WITH OVERLAPPING IMAGE & LEGACY */}
+      {/* FOUNDER WITH OVERLAPPING IMAGE & LEGACY (kept after Why Choose Us) */}
       <section className="relative bg-[#C6A45B]/10 dark:bg-[#C6A45B]/20 pt-40 pb-24 px-6 text-center overflow-hidden">
-
-        {/* OVERLAPPING CIRCLE IMAGE */}
         <motion.div
           initial={{ opacity: 0, y: 40, scale: 0.9 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -143,8 +218,8 @@ export default function Home() {
         >
           <div
             className="w-40 h-40 md:w-48 md:h-48 rounded-full p-[4px]
-                       bg-gradient-to-br from-[#D7B16A] via-[#C6A45B] to-[#8A6B2E]
-                       shadow-2xl dark:shadow-[0_0_30px_rgba(255,215,150,0.15)]"
+                 bg-gradient-to-br from-[#D7B16A] via-[#C6A45B] to-[#8A6B2E]
+                 shadow-2xl dark:shadow-[0_0_30px_rgba(255,215,150,0.15)]"
           >
             <div className="w-full h-full rounded-full overflow-hidden">
               <Image
@@ -159,7 +234,6 @@ export default function Home() {
         </motion.div>
 
         <div className="relative z-10 max-w-3xl mx-auto">
-
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -191,7 +265,6 @@ export default function Home() {
             — Pawan Basavraj Patil, Founder
           </motion.p>
 
-          {/* LEGACY */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -201,26 +274,20 @@ export default function Home() {
           >
             <h3 className="text-xl font-semibold text-[#C6A45B] mb-3">A Legacy of Construction</h3>
 
-            <p className="mb-4">
-              Our foundation began with
-              <span className="font-semibold text-[#C6A45B]"> Gurudevdatta Enterprises</span>,
-              led by Shri Basavraj Patil — completing <b>25+ projects</b> across Pune & PCMC.
+            <p className="mb-4 max-w-2xl mx-auto">
+              Our foundation began with <span className="font-semibold text-[#C6A45B]">Gurudevdatta Enterprises</span>, led by Shri Basavraj Patil — completing <strong>25+ projects</strong> across Pune & PCMC.
             </p>
 
-            <p className="mb-4">
-              Growing up around construction sites, Pawan learned engineering, discipline,
-              and workmanship directly from his father.
+            <p className="mb-4 max-w-2xl mx-auto">
+              Growing up around construction sites, Pawan learned engineering, discipline, and workmanship directly from his father.
             </p>
 
-            <p>
-              Today, Pawan Infra Developer continues the legacy with
-              <span className="font-semibold text-[#C6A45B]"> 6 ongoing projects</span>,
-              blending modern innovation with traditional expertise.
+            <p className="max-w-2xl mx-auto">
+              Today, Pawan Infra Developer continues the legacy with <span className="font-semibold text-[#C6A45B]">6 ongoing projects</span>, blending modern innovation with traditional expertise.
             </p>
           </motion.div>
         </div>
       </section>
-
     </>
   )
 }
