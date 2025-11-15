@@ -1,4 +1,3 @@
-// src/pages/index.tsx
 import Hero from "@/components/Hero"
 import Section from "@/components/Section"
 import ServiceCard from "@/components/ServiceCard"
@@ -189,7 +188,7 @@ export default function Home() {
       </Section>
 
       {/* WHY CHOOSE US */}
-      <section className="bg-[#FAFAFA] dark:bg-[#0f0f0f] pt-20 pb-40 text-center">
+      <section className="bg-[#FAFAFA] dark:bg-[#0f0f0f] pt-20 pb-30 text-center">
         <h2 className="text-3xl font-semibold text-gray-900 dark:text-white mb-10">
           Why Choose Us
         </h2>
@@ -216,12 +215,12 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      {/* ==========================
+      
+{/* ==========================
     FOUNDER SECTION (CLEAN)
 =========================== */}
 <section className="bg-[#C6A45B]/10 dark:bg-[#C6A45B]/20 py-24 px-6 text-center">
-  <div className="max-w-3xl mx-auto relative">
+ <div className="max-w-3xl mx-auto relative">
 
     {/* Founder Image */}
     <motion.div
