@@ -178,98 +178,99 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* ==========================
-          WHY CHOOSE US
-      =========================== */}
-      <section className="bg-[#FAFAFA] dark:bg-[#0f0f0f] py-20 text-center">
-        <h2 className="text-3xl font-semibold text-gray-900 dark:text-white mb-10">
-          Why Choose Us
-        </h2>
+{/* ==========================
+    WHY CHOOSE US
+=========================== */}
+<section className="bg-[#FAFAFA] dark:bg-[#0f0f0f] pt-20 pb-40 text-center">
+  <h2 className="text-3xl font-semibold text-gray-900 dark:text-white mb-10">
+    Why Choose Us
+  </h2>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10">
-          {[
-            { icon: "🏗️", label: "Quality Construction" },
-            { icon: "🕒", label: "On-Time Delivery" },
-            { icon: "👷‍♂️", label: "Expert Engineers" },
-            { icon: "🤝", label: "Trusted by Clients" },
-          ].map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="flex flex-col items-center"
-            >
-              <div className="text-4xl">{item.icon}</div>
-              <p className="mt-3 text-sm font-medium text-gray-700 dark:text-gray-300">
-                {item.label}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+  <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10">
+    {[
+      { icon: "🏗️", label: "Quality Construction" },
+      { icon: "🕒", label: "On-Time Delivery" },
+      { icon: "👷‍♂️", label: "Expert Engineers" },
+      { icon: "🤝", label: "Trusted by Clients" },
+    ].map((item, i) => (
+      <motion.div
+        key={i}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: i * 0.1 }}
+        className="flex flex-col items-center"
+      >
+        <div className="text-4xl">{item.icon}</div>
+        <p className="mt-3 text-sm font-medium text-gray-700 dark:text-gray-300">
+          {item.label}
+        </p>
+      </motion.div>
+    ))}
+  </div>
+</section>
 
-
-      {/* FOUNDER WITH OVERLAPPING IMAGE & LEGACY (kept after Why Choose Us) */}
-      <section className="relative bg-[#C6A45B]/10 dark:bg-[#C6A45B]/20 pt-40 pb-24 px-6 text-center overflow-hidden">
-        <motion.div
-          initial={{ opacity: 0, y: 40, scale: 0.9 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="founder-wrapper absolute left-1/2 -translate-x-1/2 z-20"
-        >
-          <div
-            className="w-40 h-40 md:w-48 md:h-48 rounded-full p-[4px]
+{/* FLOATING FOUNDER IMAGE (only this one) */}
+<div className="w-full flex justify-center -mt-32 mb-0 z-20 relative">
+  <motion.div
+    initial={{ opacity: 0, y: 40, scale: 0.9 }}
+    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    viewport={{ once: true }}
+    className=""
+  >
+    <div
+      className="w-40 h-40 md:w-48 md:h-48 rounded-full p-[4px]
                  bg-gradient-to-br from-[#D7B16A] via-[#C6A45B] to-[#8A6B2E]
-                 shadow-2xl dark:shadow-[0_0_30px_rgba(255,215,150,0.15)]"
-          >
-            <div className="w-full h-full rounded-full overflow-hidden">
-              <Image
-                src="/founder.jpg"
-                alt="Founder"
-                width={400}
-                height={400}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </motion.div>
+                 shadow-2xl dark:shadow-[0_0_30px_rgba(255,215,150,0.15)]">
+      <div className="w-full h-full rounded-full overflow-hidden">
+        <Image
+          src="/founder.jpg"
+          alt="Founder"
+          width={400}
+          height={400}
+          className="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+  </motion.div>
+</div>
 
-        <div className="relative z-10 max-w-3xl mx-auto">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="text-3xl font-semibold text-gray-900 dark:text-gray-100 mb-6 mt-12"
-          >
-            Founder’s Message
-          </motion.h2>
+{/* ==========================
+    FOUNDER SECTION
+=========================== */}
+<section className="relative bg-[#C6A45B]/10 dark:bg-[#C6A45B]/20 pt-32 pb-24 px-6 text-center">
+  <div className="relative z-10 max-w-3xl mx-auto">
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="text-gray-700 dark:text-gray-300 leading-relaxed italic"
-          >
-            “At Pawan Infra Developer, every structure reflects quality, trust, and precision.
-            Our mission is to turn dream projects into lasting landmarks.”
-          </motion.p>
+    <motion.h2
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      viewport={{ once: true }}
+      className="text-3xl font-semibold text-gray-900 dark:text-gray-100 mb-6"
+    >
+      Founder’s Message
+    </motion.h2>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="mt-6 font-medium text-gray-800 dark:text-gray-200"
-          >
-            — Pawan Basavraj Patil, Founder
-          </motion.p>
-          
-        </div>
-      </section>
-    </>
-  )
-}
+    <motion.p
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.1 }}
+      viewport={{ once: true }}
+      className="text-gray-700 dark:text-gray-300 leading-relaxed italic"
+    >
+      “At Pawan Infra Developer, every structure reflects quality, trust, and precision.
+      Our mission is to turn dream projects into lasting landmarks.”
+    </motion.p>
+
+    <motion.p
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.2 }}
+      viewport={{ once: true }}
+      className="mt-6 font-medium text-gray-800 dark:text-gray-200"
+    >
+      — Pawan Basavraj Patil, Founder
+    </motion.p>
+
+  </div>
+</section>
