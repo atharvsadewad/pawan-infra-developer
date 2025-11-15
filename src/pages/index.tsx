@@ -217,66 +217,68 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FLOATING FOUNDER IMAGE (FIXED) */}
-      <div className="relative z-30 flex justify-center -mt-28 md:-mt-32">
-        <motion.div
-          initial={{ opacity: 0, y: 30, scale: 0.9 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="w-40 h-40 md:w-48 md:h-48 rounded-full p-[4px]
-                     bg-gradient-to-br from-[#D7B16A] via-[#C6A45B] to-[#8A6B2E]
-                     shadow-2xl dark:shadow-[0_0_30px_rgba(255,215,150,0.15)]"
-        >
-          <div className="w-full h-full rounded-full overflow-hidden">
-            <Image
-              src="/founder.jpg"
-              alt="Founder"
-              width={400}
-              height={400}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </motion.div>
-      </div>
+      {/* ==========================
+    FOUNDER SECTION (CLEAN)
+=========================== */}
+<section className="bg-[#C6A45B]/10 dark:bg-[#C6A45B]/20 py-24 px-6 text-center">
+  <div className="max-w-3xl mx-auto relative">
 
-      {/* FOUNDER SECTION */}
-      <section className="relative bg-[#C6A45B]/10 dark:bg-[#C6A45B]/20 pt-40 pb-24 px-6 text-center">
-        <div className="relative z-10 max-w-3xl mx-auto">
-
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="text-3xl font-semibold text-gray-900 dark:text-gray-100 mb-6"
-          >
-            Founder’s Message
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="text-gray-700 dark:text-gray-300 leading-relaxed italic"
-          >
-            “At Pawan Infra Developer, every structure reflects quality, trust, and precision.
-            Our mission is to turn dream projects into lasting landmarks.”
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="mt-6 font-medium text-gray-800 dark:text-gray-200"
-          >
-            — Pawan Basavraj Patil, Founder
-          </motion.p>
-
+    {/* Founder Image */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      viewport={{ once: true }}
+      className="flex justify-center mb-8"
+    >
+      <div className="w-40 h-40 md:w-48 md:h-48 rounded-full p-[4px]
+        bg-gradient-to-br from-[#D7B16A] via-[#C6A45B] to-[#8A6B2E]
+        shadow-xl dark:shadow-[0_0_25px_rgba(255,215,150,0.15)]">
+        <div className="w-full h-full rounded-full overflow-hidden">
+          <Image
+            src="/founder.jpg"
+            alt="Founder"
+            width={400}
+            height={400}
+            className="w-full h-full object-cover"
+          />
         </div>
-      </section>
-    </>
-  )
-}
+      </div>
+    </motion.div>
+
+    {/* Heading */}
+    <motion.h2
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      viewport={{ once: true }}
+      className="text-3xl font-semibold text-gray-900 dark:text-gray-100 mb-4"
+    >
+      Founder’s Message
+    </motion.h2>
+
+    {/* Quote */}
+    <motion.p
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.1 }}
+      viewport={{ once: true }}
+      className="text-gray-700 dark:text-gray-300 leading-relaxed italic max-w-xl mx-auto"
+    >
+      “At Pawan Infra Developer, every structure reflects quality, trust and precision.
+      Our mission is to turn dream projects into lasting landmarks.”
+    </motion.p>
+
+    {/* Name */}
+    <motion.p
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.2 }}
+      viewport={{ once: true }}
+      className="mt-6 font-medium text-gray-800 dark:text-gray-200"
+    >
+      — Pawan Basavraj Patil, Founder
+    </motion.p>
+
+  </div>
+</section>
