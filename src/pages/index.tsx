@@ -149,44 +149,60 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ==============================
-          UPDATED FOUNDER'S MESSAGE
-      =============================== */}
-      <section className="relative bg-[#C6A45B]/10 dark:bg-[#C6A45B]/20 py-24 px-6 text-center overflow-hidden">
+      {/* FOUNDER’S MESSAGE + LEGACY WITH OVERLAPPING IMAGE */}
+<section className="relative bg-[#C6A45B]/10 dark:bg-[#C6A45B]/20 pt-32 pb-24 px-6 text-center">
 
-        {/* Half-circle Background */}
-        <div className="absolute inset-0 flex justify-center">
-          <div className="w-[500px] h-[500px] bg-[#C6A45B]/20 dark:bg-[#C6A45B]/30 rounded-full blur-3xl"></div>
-        </div>
+  {/* Founder Image Overlapping */}
+  <div className="absolute left-1/2 -top-20 -translate-x-1/2 z-20">
+    <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-xl dark:border-[#1a1a1a] bg-white">
+      <Image
+        src="/founder.jpg"
+        alt="Founder"
+        width={400}
+        height={400}
+        className="w-full h-full object-cover"
+      />
+    </div>
+  </div>
 
-        <div className="relative z-10 max-w-3xl mx-auto">
+  {/* Background Gradient */}
+  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#C6A45B]/10 dark:to-[#C6A45B]/30"></div>
 
-          {/* Founder Image */}
-          <div className="flex justify-center mb-8">
-            <Image
-              src="/founder.jpg"
-              width={200}
-              height={200}
-              alt="Founder"
-              className="rounded-full object-cover shadow-xl border-4 border-white dark:border-[#1a1a1a]"
-            />
-          </div>
+  <div className="relative z-10 max-w-3xl mx-auto">
 
-          <h2 className="text-3xl font-semibold text-gray-900 dark:text-white mb-6">
-            Founder’s Message
-          </h2>
+    <h2 className="text-3xl font-semibold text-gray-900 dark:text-gray-100 mb-6 mt-12">
+      Founder’s Message
+    </h2>
 
-          <p className="text-gray-700 dark:text-gray-300 leading-relaxed italic">
-            “At Pawan Infra Developer, we believe every structure should reflect quality,
-            trust, and precision. Our mission is to turn your dream projects into lasting
-            landmarks through commitment and engineering excellence.”
-          </p>
+    <p className="text-gray-700 dark:text-gray-300 leading-relaxed italic max-w-2xl mx-auto">
+      “At Pawan Infra Developer, we believe every structure should reflect quality, trust, and precision.
+      Our mission is to turn your dream projects into lasting landmarks through commitment and engineering excellence.”
+    </p>
 
-          <p className="mt-6 font-medium text-gray-800 dark:text-gray-200">
-            — Pawan Basavraj Patil, Founder
-          </p>
-        </div>
-      </section>
-    </>
-  )
-}
+    <p className="mt-6 font-medium text-gray-800 dark:text-gray-200">
+      — Pawan Basavraj Patil, Founder
+    </p>
+
+    {/* Legacy Story */}
+    <div className="mt-12 text-gray-700 dark:text-gray-300 leading-relaxed max-w-2xl mx-auto">
+      <h3 className="text-xl font-semibold text-[#C6A45B] mb-3">A Legacy of Construction</h3>
+
+      <p className="mb-4">
+        Our journey is built upon the strong foundation established by
+        <span className="font-semibold text-[#C6A45B]"> Gurudevdatta Enterprises</span>,
+        led by Shri Basavraj Patil — a trusted name in the Pune & PCMC region.
+      </p>
+
+      <p className="mb-4">
+        With <span className="font-semibold text-[#C6A45B]">25+ completed projects</span> across residential, commercial,
+        and industrial sectors, this legacy inspires every project we undertake today.
+      </p>
+
+      <p>
+        Today, Pawan Infra Developer proudly carries this heritage forward, with
+        <span className="font-semibold text-[#C6A45B]"> 6 ongoing projects </span>
+        and a modern, innovative approach to construction and infrastructure.
+      </p>
+    </div>
+  </div>
+</section>
