@@ -178,9 +178,11 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* WHY CHOOSE US */}
-      <section className="bg-[#FAFAFA] dark:bg-[#111111] py-20 text-center">
-        <h2 className="text-3xl font-semibold text-gray-900 dark:text-gray-100 mb-10">
+      {/* ==========================
+          WHY CHOOSE US
+      =========================== */}
+      <section className="bg-[#FAFAFA] dark:bg-[#0f0f0f] py-20 text-center">
+        <h2 className="text-3xl font-semibold text-gray-900 dark:text-white mb-10">
           Why Choose Us
         </h2>
 
@@ -206,6 +208,7 @@ export default function Home() {
           ))}
         </div>
       </section>
+
 
       {/* FOUNDER WITH OVERLAPPING IMAGE & LEGACY (kept after Why Choose Us) */}
       <section className="relative bg-[#C6A45B]/10 dark:bg-[#C6A45B]/20 pt-40 pb-24 px-6 text-center overflow-hidden">
@@ -264,28 +267,7 @@ export default function Home() {
           >
             — Pawan Basavraj Patil, Founder
           </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.25 }}
-            viewport={{ once: true }}
-            className="mt-12 text-gray-700 dark:text-gray-300 leading-relaxed"
-          >
-            <h3 className="text-xl font-semibold text-[#C6A45B] mb-3">A Legacy of Construction</h3>
-
-            <p className="mb-4 max-w-2xl mx-auto">
-              Our foundation began with <span className="font-semibold text-[#C6A45B]">Gurudevdatta Enterprises</span>, led by Shri Basavraj Patil — completing <strong>25+ projects</strong> across Pune & PCMC.
-            </p>
-
-            <p className="mb-4 max-w-2xl mx-auto">
-              Growing up around construction sites, Pawan learned engineering, discipline, and workmanship directly from his father.
-            </p>
-
-            <p className="max-w-2xl mx-auto">
-              Today, Pawan Infra Developer continues the legacy with <span className="font-semibold text-[#C6A45B]">6 ongoing projects</span>, blending modern innovation with traditional expertise.
-            </p>
-          </motion.div>
+          
         </div>
       </section>
     </>
