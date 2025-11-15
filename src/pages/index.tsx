@@ -210,25 +210,6 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="w-full flex justify-center relative z-30 -mt-24 md:-mt-28">
-  <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full p-[4px]
-      bg-gradient-to-br from-[#D7B16A] via-[#C6A45B] to-[#8A6B2E]
-      shadow-[0_8px_40px_rgba(0,0,0,0.18)]
-      after:absolute after:-bottom-6 after:left-1/2 after:-translate-x-1/2
-      after:w-36 after:h-10 after:bg-[#C6A45B]/10 after:blur-2xl after:rounded-full">
-
-    <div className="w-full h-full rounded-full overflow-hidden relative z-10">
-      <Image
-        src="/founder.jpg"
-        alt="Founder"
-        width={400}
-        height={400}
-        className="w-full h-full object-cover"
-      />
-    </div>
-  </div>
-</div>
-
             Founder’s Message
           </motion.h2>
 
