@@ -132,3 +132,23 @@ section {
     box-shadow: 0 4px 30px rgba(255,255,255,0.05) !important;
   }
 }
+/* ========================================
+   Founder Image Overlap Fix
+   Ensures perfect center placement across devices
+======================================== */
+
+.founder-wrapper {
+  top: -70px; /* default overlap */
+}
+
+@media (min-width: 768px) {
+  .founder-wrapper {
+    top: -90px; /* tablet overlap */
+  }
+}
+
+@media (min-width: 1024px) {
+  .founder-wrapper {
+    top: -110px; /* desktop overlap */
+  }
+}
