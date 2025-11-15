@@ -1,3 +1,4 @@
+// src/pages/index.tsx
 import Hero from "@/components/Hero"
 import Section from "@/components/Section"
 import ServiceCard from "@/components/ServiceCard"
@@ -19,8 +20,10 @@ export default function Home() {
         />
       </Head>
 
+      {/* HERO SECTION */}
       <Hero />
 
+      {/* ABOUT SNAPSHOT */}
       <Section
         id="about"
         title="About"
@@ -63,6 +66,7 @@ export default function Home() {
         </div>
       </Section>
 
+      {/* LEGACY SECTION */}
       <section className="py-16 px-6 bg-white dark:bg-[#070707]">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -135,6 +139,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SERVICES */}
       <Section
         id="services"
         title="Our Services"
@@ -169,6 +174,7 @@ export default function Home() {
         </div>
       </Section>
 
+      {/* PROJECT PREVIEW */}
       <Section
         id="projects"
         title="Projects"
@@ -182,7 +188,8 @@ export default function Home() {
         </div>
       </Section>
 
-      <section className="bg-[#FAFAFA] dark:bg-[#0f0f0f] pt-20 pb-48 text-center">
+      {/* WHY CHOOSE US */}
+      <section className="bg-[#FAFAFA] dark:bg-[#0f0f0f] pt-20 pb-56 text-center">
         <h2 className="text-3xl font-semibold text-gray-900 dark:text-white mb-10">
           Why Choose Us
         </h2>
@@ -210,6 +217,40 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FLOATING FOUNDER IMAGE (FIXED) */}
+      <div className="relative z-30 flex justify-center -mt-28 md:-mt-32">
+        <motion.div
+          initial={{ opacity: 0, y: 30, scale: 0.9 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="w-40 h-40 md:w-48 md:h-48 rounded-full p-[4px]
+                     bg-gradient-to-br from-[#D7B16A] via-[#C6A45B] to-[#8A6B2E]
+                     shadow-2xl dark:shadow-[0_0_30px_rgba(255,215,150,0.15)]"
+        >
+          <div className="w-full h-full rounded-full overflow-hidden">
+            <Image
+              src="/founder.jpg"
+              alt="Founder"
+              width={400}
+              height={400}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </motion.div>
+      </div>
+
+      {/* FOUNDER SECTION */}
+      <section className="relative bg-[#C6A45B]/10 dark:bg-[#C6A45B]/20 pt-40 pb-24 px-6 text-center">
+        <div className="relative z-10 max-w-3xl mx-auto">
+
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="text-3xl font-semibold text-gray-900 dark:text-gray-100 mb-6"
+          >
             Founder’s Message
           </motion.h2>
 
@@ -233,6 +274,7 @@ export default function Home() {
           >
             — Pawan Basavraj Patil, Founder
           </motion.p>
+
         </div>
       </section>
     </>
