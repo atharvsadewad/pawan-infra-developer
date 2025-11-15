@@ -189,7 +189,7 @@ export default function Home() {
       </Section>
 
       {/* WHY CHOOSE US */}
-      <section className="bg-[#FAFAFA] dark:bg-[#0f0f0f] pt-20 pb-56 text-center">
+      <section className="bg-[#FAFAFA] dark:bg-[#0f0f0f] pt-20 pb-40 text-center">
         <h2 className="text-3xl font-semibold text-gray-900 dark:text-white mb-10">
           Why Choose Us
         </h2>
