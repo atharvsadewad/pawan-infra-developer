@@ -131,95 +131,96 @@ export default function Home() {
       </section>
 
       {/* FOUNDER WITH OVERLAPPING IMAGE & LEGACY */}
-<section className="relative bg-[#C6A45B]/10 dark:bg-[#C6A45B]/20 pt-40 pb-24 px-6 text-center overflow-hidden">
+      <section className="relative bg-[#C6A45B]/10 dark:bg-[#C6A45B]/20 pt-40 pb-24 px-6 text-center overflow-hidden">
 
-  {/* OVERLAPPING CIRCLE IMAGE WITH GOLD RING + ANIMATION */}
-  <motion.div
-    initial={{ opacity: 0, y: 40, scale: 0.9 }}
-    whileInView={{ opacity: 1, y: 0, scale: 1 }}
-    transition={{ duration: 0.8, ease: "easeOut" }}
-    viewport={{ once: true }}
-    className="absolute left-1/2 -top-24 -translate-x-1/2 z-20"
-  >
-    <div
-      className="w-40 h-40 md:w-48 md:h-48 rounded-full p-[4px]
-                 bg-gradient-to-br from-[#D7B16A] via-[#C6A45B] to-[#8A6B2E]
-                 shadow-2xl dark:shadow-[0_0_30px_rgba(255,215,150,0.15)]"
-    >
-      <div className="w-full h-full rounded-full overflow-hidden">
-        <Image
-          src="/founder.jpg"
-          alt="Founder"
-          width={400}
-          height={400}
-          className="w-full h-full object-cover"
-        />
-      </div>
-    </div>
-  </motion.div>
+        {/* OVERLAPPING CIRCLE IMAGE */}
+        <motion.div
+          initial={{ opacity: 0, y: 40, scale: 0.9 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="absolute left-1/2 -top-24 -translate-x-1/2 z-20"
+        >
+          <div
+            className="w-40 h-40 md:w-48 md:h-48 rounded-full p-[4px]
+                       bg-gradient-to-br from-[#D7B16A] via-[#C6A45B] to-[#8A6B2E]
+                       shadow-2xl dark:shadow-[0_0_30px_rgba(255,215,150,0.15)]"
+          >
+            <div className="w-full h-full rounded-full overflow-hidden">
+              <Image
+                src="/founder.jpg"
+                alt="Founder"
+                width={400}
+                height={400}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </motion.div>
 
-  <div className="relative z-10 max-w-3xl mx-auto">
+        <div className="relative z-10 max-w-3xl mx-auto">
 
-    {/* HEADING WITH FADE-IN */}
-    <motion.h2
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7 }}
-      viewport={{ once: true }}
-      className="text-3xl font-semibold text-gray-900 dark:text-gray-100 mb-6 mt-12"
-    >
-      Founder’s Message
-    </motion.h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="text-3xl font-semibold text-gray-900 dark:text-gray-100 mb-6 mt-12"
+          >
+            Founder’s Message
+          </motion.h2>
 
-    {/* QUOTE */}
-    <motion.p
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, delay: 0.1 }}
-      viewport={{ once: true }}
-      className="text-gray-700 dark:text-gray-300 leading-relaxed italic"
-    >
-      “At Pawan Infra Developer, every structure reflects quality, trust, and precision.
-      Our mission is to turn dream projects into lasting landmarks.”
-    </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="text-gray-700 dark:text-gray-300 leading-relaxed italic"
+          >
+            “At Pawan Infra Developer, every structure reflects quality, trust, and precision.
+            Our mission is to turn dream projects into lasting landmarks.”
+          </motion.p>
 
-    <motion.p
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, delay: 0.2 }}
-      viewport={{ once: true }}
-      className="mt-6 font-medium text-gray-800 dark:text-gray-200"
-    >
-      — Pawan Basavraj Patil, Founder
-    </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="mt-6 font-medium text-gray-800 dark:text-gray-200"
+          >
+            — Pawan Basavraj Patil, Founder
+          </motion.p>
 
-    {/* LEGACY STORY */}
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.25 }}
-      viewport={{ once: true }}
-      className="mt-12 text-gray-700 dark:text-gray-300 leading-relaxed"
-    >
-      <h3 className="text-xl font-semibold text-[#C6A45B] mb-3">A Legacy of Construction</h3>
+          {/* LEGACY */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.25 }}
+            viewport={{ once: true }}
+            className="mt-12 text-gray-700 dark:text-gray-300 leading-relaxed"
+          >
+            <h3 className="text-xl font-semibold text-[#C6A45B] mb-3">A Legacy of Construction</h3>
 
-      <p className="mb-4">
-        Our foundation began with
-        <span className="font-semibold text-[#C6A45B]"> Gurudevdatta Enterprises</span>,
-        led by Shri Basavraj Patil — completing <b>25+ projects</b> across Pune & PCMC.
-      </p>
+            <p className="mb-4">
+              Our foundation began with
+              <span className="font-semibold text-[#C6A45B]"> Gurudevdatta Enterprises</span>,
+              led by Shri Basavraj Patil — completing <b>25+ projects</b> across Pune & PCMC.
+            </p>
 
-      <p className="mb-4">
-        Growing up around construction sites, Pawan learned engineering, discipline,
-        and workmanship directly from his father.
-      </p>
+            <p className="mb-4">
+              Growing up around construction sites, Pawan learned engineering, discipline,
+              and workmanship directly from his father.
+            </p>
 
-      <p>
-        Today, Pawan Infra Developer continues the legacy with
-        <span className="font-semibold text-[#C6A45B]"> 6 ongoing projects</span>,
-        blending modern innovation with traditional expertise.
-      </p>
-    </motion.div>
+            <p>
+              Today, Pawan Infra Developer continues the legacy with
+              <span className="font-semibold text-[#C6A45B]"> 6 ongoing projects</span>,
+              blending modern innovation with traditional expertise.
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
-  </div>
-</section>
+    </>
+  )
+}
