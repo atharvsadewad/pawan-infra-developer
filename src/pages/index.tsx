@@ -214,7 +214,7 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="absolute left-1/2 -top-24 -translate-x-1/2 z-20"
+          className="founder-wrapper absolute left-1/2 -translate-x-1/2 z-20"
         >
           <div
             className="w-40 h-40 md:w-48 md:h-48 rounded-full p-[4px]
