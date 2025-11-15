@@ -21,79 +21,64 @@ export default function Home() {
       {/* HERO SECTION */}
       <Hero />
 
-      {/* ==============================
-          ABOUT SNAPSHOT (HOMEPAGE)
-      =============================== */}
+      {/* ABOUT SNAPSHOT */}
       <Section
         id="about"
         title="About"
         subtitle="Crafting spaces that inspire and endure."
         className="relative bg-gradient-to-br from-white to-gray-50 dark:from-[#0f0f0f] dark:to-[#1a1a1a] overflow-hidden transition-all duration-500"
       >
-        {/* Background Shapes */}
         <div className="absolute -top-20 -right-24 w-72 h-72 bg-[#C6A45B]/10 dark:bg-[#C6A45B]/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 left-10 w-64 h-64 bg-[#C6A45B]/10 dark:bg-[#C6A45B]/20 rotate-45 rounded-lg blur-2xl"></div>
 
         <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
           <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
             At{" "}
-            <span className="font-semibold text-[#C6A45B]">Pawan Infra Developer</span>,  
-            we combine modern design with quality engineering to create elegant, durable, and well-planned spaces.  
-            Guided by legacy and built with innovation, our work reflects trust, precision, and craftsmanship.
+            <span className="font-semibold text-[#C6A45B]">Pawan Infra Developer</span>,
+            we build elegant, durable, and well-planned residential and commercial spaces.
+            Our vision is driven by trust, design excellence, and strong engineering.
           </p>
 
-          {/* UPDATED METRICS */}
+          {/* Updated Metrics */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-10">
             <div>
               <h3 className="text-3xl font-semibold text-[#C6A45B]">25+</h3>
               <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">Successful Projects</p>
             </div>
-
             <div>
               <h3 className="text-3xl font-semibold text-[#C6A45B]">6</h3>
               <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">Ongoing Projects</p>
             </div>
-
             <div>
               <h3 className="text-3xl font-semibold text-[#C6A45B]">100%</h3>
               <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">Client Satisfaction</p>
             </div>
           </div>
-
-          {/* FULL STORY BUTTON */}
-          <a
-            href="/about"
-            className="inline-block mt-6 text-sm font-medium text-[#C6A45B] hover:underline"
-          >
-            Read Full Story →
-          </a>
         </div>
       </Section>
 
-      {/* ==========================
-          SERVICES OVERVIEW
-      =========================== */}
+      {/* SERVICES OVERVIEW */}
       <Section
         id="services"
         title="Our Services"
         subtitle="Comprehensive construction solutions for every vision."
-        className="bg-gray-50 dark:bg-[#0e0e0e]"
+        className="bg-gray-50 dark:bg-[#0f0f0f]"
       >
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           <ServiceCard
             icon={<FaBuilding className="w-8 h-8 text-[#C6A45B]" />}
             title="Construction & Building Services"
-            description="From luxurious homes to commercial and industrial developments — we deliver projects that define trust and precision."
+            description="Residential, commercial and industrial construction executed with precision."
           />
           <ServiceCard
             icon={<FaIndustry className="w-8 h-8 text-[#C6A45B]" />}
             title="Industrial Construction Works"
-            description="Specialized in factories, warehouses, PEB structures, RCC & steel works, and heavy foundation projects."
+            description="Factories, warehouses, PEB structures, RCC foundations and more."
           />
           <ServiceCard
             icon={<FaTools className="w-8 h-8 text-[#C6A45B]" />}
-            title="Renovation & Turnkey Projects"
-            description="Providing end-to-end project execution — from design and architecture to finishing and interiors."
+            title="Turnkey & Renovation Projects"
+            description="End-to-end delivery — design, planning, materials and execution."
           />
         </div>
 
@@ -107,22 +92,18 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* ==========================
-          PROJECTS PREVIEW
-      =========================== */}
-      <Section id="projects" title="Projects" subtitle="A glimpse of what's coming soon." className="bg-white dark:bg-[#111111]">
+      {/* PROJECT PREVIEW */}
+      <Section id="projects" title="Projects" subtitle="A glimpse of what's coming soon." className="bg-white dark:bg-[#0f0f0f]">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           <ProjectCard name="Aurum Residences" type="Luxury Residential" location="Pune, MH" />
           <ProjectCard name="Terra Square" type="Commercial Complex" location="Pune, MH" />
-          <ProjectCard name="Vista Enclave" type="Mixed-Use" location="Pune, MH" />
+          <ProjectCard name="Vista Enclave" type="Mixed-Use Development" location="Pune, MH" />
         </div>
       </Section>
 
-      {/* ==========================
-          WHY CHOOSE US
-      =========================== */}
-      <section className="bg-[#FAFAFA] dark:bg-[#0f0f0f] py-20 text-center">
-        <h2 className="text-3xl font-semibold text-gray-900 dark:text-white mb-10">
+      {/* WHY CHOOSE US */}
+      <section className="bg-[#FAFAFA] dark:bg-[#111111] py-20 text-center">
+        <h2 className="text-3xl font-semibold text-gray-900 dark:text-gray-100 mb-10">
           Why Choose Us
         </h2>
 
@@ -149,60 +130,96 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOUNDER’S MESSAGE + LEGACY WITH OVERLAPPING IMAGE */}
-<section className="relative bg-[#C6A45B]/10 dark:bg-[#C6A45B]/20 pt-32 pb-24 px-6 text-center">
+      {/* FOUNDER WITH OVERLAPPING IMAGE & LEGACY */}
+<section className="relative bg-[#C6A45B]/10 dark:bg-[#C6A45B]/20 pt-40 pb-24 px-6 text-center overflow-hidden">
 
-  {/* Founder Image Overlapping */}
-  <div className="absolute left-1/2 -top-20 -translate-x-1/2 z-20">
-    <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-xl dark:border-[#1a1a1a] bg-white">
-      <Image
-        src="/founder.jpg"
-        alt="Founder"
-        width={400}
-        height={400}
-        className="w-full h-full object-cover"
-      />
+  {/* OVERLAPPING CIRCLE IMAGE WITH GOLD RING + ANIMATION */}
+  <motion.div
+    initial={{ opacity: 0, y: 40, scale: 0.9 }}
+    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    viewport={{ once: true }}
+    className="absolute left-1/2 -top-24 -translate-x-1/2 z-20"
+  >
+    <div
+      className="w-40 h-40 md:w-48 md:h-48 rounded-full p-[4px]
+                 bg-gradient-to-br from-[#D7B16A] via-[#C6A45B] to-[#8A6B2E]
+                 shadow-2xl dark:shadow-[0_0_30px_rgba(255,215,150,0.15)]"
+    >
+      <div className="w-full h-full rounded-full overflow-hidden">
+        <Image
+          src="/founder.jpg"
+          alt="Founder"
+          width={400}
+          height={400}
+          className="w-full h-full object-cover"
+        />
+      </div>
     </div>
-  </div>
-
-  {/* Background Gradient */}
-  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#C6A45B]/10 dark:to-[#C6A45B]/30"></div>
+  </motion.div>
 
   <div className="relative z-10 max-w-3xl mx-auto">
 
-    <h2 className="text-3xl font-semibold text-gray-900 dark:text-gray-100 mb-6 mt-12">
+    {/* HEADING WITH FADE-IN */}
+    <motion.h2
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      viewport={{ once: true }}
+      className="text-3xl font-semibold text-gray-900 dark:text-gray-100 mb-6 mt-12"
+    >
       Founder’s Message
-    </h2>
+    </motion.h2>
 
-    <p className="text-gray-700 dark:text-gray-300 leading-relaxed italic max-w-2xl mx-auto">
-      “At Pawan Infra Developer, we believe every structure should reflect quality, trust, and precision.
-      Our mission is to turn your dream projects into lasting landmarks through commitment and engineering excellence.”
-    </p>
+    {/* QUOTE */}
+    <motion.p
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.1 }}
+      viewport={{ once: true }}
+      className="text-gray-700 dark:text-gray-300 leading-relaxed italic"
+    >
+      “At Pawan Infra Developer, every structure reflects quality, trust, and precision.
+      Our mission is to turn dream projects into lasting landmarks.”
+    </motion.p>
 
-    <p className="mt-6 font-medium text-gray-800 dark:text-gray-200">
+    <motion.p
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.2 }}
+      viewport={{ once: true }}
+      className="mt-6 font-medium text-gray-800 dark:text-gray-200"
+    >
       — Pawan Basavraj Patil, Founder
-    </p>
+    </motion.p>
 
-    {/* Legacy Story */}
-    <div className="mt-12 text-gray-700 dark:text-gray-300 leading-relaxed max-w-2xl mx-auto">
+    {/* LEGACY STORY */}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.25 }}
+      viewport={{ once: true }}
+      className="mt-12 text-gray-700 dark:text-gray-300 leading-relaxed"
+    >
       <h3 className="text-xl font-semibold text-[#C6A45B] mb-3">A Legacy of Construction</h3>
 
       <p className="mb-4">
-        Our journey is built upon the strong foundation established by
+        Our foundation began with
         <span className="font-semibold text-[#C6A45B]"> Gurudevdatta Enterprises</span>,
-        led by Shri Basavraj Patil — a trusted name in the Pune & PCMC region.
+        led by Shri Basavraj Patil — completing <b>25+ projects</b> across Pune & PCMC.
       </p>
 
       <p className="mb-4">
-        With <span className="font-semibold text-[#C6A45B]">25+ completed projects</span> across residential, commercial,
-        and industrial sectors, this legacy inspires every project we undertake today.
+        Growing up around construction sites, Pawan learned engineering, discipline,
+        and workmanship directly from his father.
       </p>
 
       <p>
-        Today, Pawan Infra Developer proudly carries this heritage forward, with
-        <span className="font-semibold text-[#C6A45B]"> 6 ongoing projects </span>
-        and a modern, innovative approach to construction and infrastructure.
+        Today, Pawan Infra Developer continues the legacy with
+        <span className="font-semibold text-[#C6A45B]"> 6 ongoing projects</span>,
+        blending modern innovation with traditional expertise.
       </p>
-    </div>
+    </motion.div>
+
   </div>
 </section>
