@@ -12,12 +12,31 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Pawan Infra Developer | Building Landmarks, Defining Skylines</title>
-        <meta
-          name="description"
-          content="Pawan Infra Developer delivers modern, high-quality residential, commercial, and industrial projects across Pune with trust, innovation, and excellence."
-        />
-      </Head>
+  <title>Pawan Infra Developer | Construction Company in Pune & PCMC</title>
+  <meta
+    name="description"
+    content="Pawan Infra Developer is a trusted construction company in Pune & PCMC delivering residential, commercial, and industrial projects with quality, safety, and timely execution."
+  />
+
+  {/* Primary SEO Keywords */}
+  <meta
+    name="keywords"
+    content="Pawan Infra Developer, construction company in Pune, builders in Chinchwad, infrastructure developers Pune, industrial construction Pune"
+  />
+
+  {/* Open Graph */}
+  <meta property="og:title" content="Pawan Infra Developer | Construction Company in Pune" />
+  <meta
+    property="og:description"
+    content="Leading construction & infrastructure development company in Pune & PCMC with 25+ completed projects and 6 ongoing developments."
+  />
+  <meta property="og:url" content="https://pawaninfradeveloper.in" />
+  <meta property="og:type" content="website" />
+
+  {/* Canonical */}
+  <link rel="canonical" href="https://pawaninfradeveloper.in/" />
+</Head>
+
 
       {/* HERO SECTION */}
       <Hero />
