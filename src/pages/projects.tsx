@@ -6,13 +6,26 @@ export default function Projects() {
   return (
     <>
       {/* ✅ Page Metadata */}
-      <Head>
-        <title>Projects | Pawan Infra Developer</title>
-        <meta
-          name="description"
-          content="Explore our projects."
-        />
-      </Head>
+<Head>
+  <title>Projects | Residential & Commercial Developments | Pawan Infra Developer</title>
+  <meta
+    name="description"
+    content="Explore upcoming and completed residential, commercial and industrial construction projects by Pawan Infra Developer in Pune & PCMC."
+  />
+
+  <meta
+    name="keywords"
+    content="construction projects Pune, residential projects Pune, commercial projects PCMC, infrastructure development"
+  />
+
+  <meta property="og:title" content="Our Projects - Pawan Infra Developer" />
+  <meta
+    property="og:description"
+    content="A preview of landmark residential, commercial, and mixed-use projects handled by Pawan Infra Developer."
+  />
+  <link rel="canonical" href="https://pawaninfradeveloper.in/projects" />
+</Head>
+
 
       {/* ✅ Main Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-white to-gray-50 dark:from-[#0a0a0a] dark:to-[#111111] py-20 transition-colors duration-500">
