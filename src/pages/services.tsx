@@ -6,13 +6,26 @@ import ServiceCard from "@/components/ServiceCard"
 export default function Services() {
   return (
     <>
-      <Head>
-        <title>Services | Pawan Infra Developer</title>
-        <meta
-          name="description"
-          content="Explore a complete range of construction and infrastructure services by Pawan Infra Developer — from residential and commercial buildings to industrial projects and turnkey solutions."
-        />
-      </Head>
+    <Head>
+  <title>Services | Construction, Industrial & Turnkey Projects | Pawan Infra Developer</title>
+  <meta
+    name="description"
+    content="Explore construction services by Pawan Infra Developer including residential, commercial, industrial, renovation, PEB, RCC, and turnkey solutions."
+  />
+
+  <meta
+    name="keywords"
+    content="construction services Pune, industrial construction, turnkey projects Pune, builders in Chinchwad, renovation services"
+  />
+
+  <meta property="og:title" content="Our Services - Pawan Infra Developer" />
+  <meta
+    property="og:description"
+    content="Complete construction solutions including building works, industrial structures, and turnkey project delivery."
+  />
+  <link rel="canonical" href="https://pawaninfradeveloper.in/services" />
+</Head>
+
 
       <section className="min-h-screen bg-white dark:bg-[#0d0d0d] py-24 px-6 transition-colors duration-500">
         <div className="mx-auto max-w-7xl text-center">
