@@ -5,12 +5,25 @@ export default function Contact() {
   return (
     <>
       <Head>
-        <title>Contact | Pawan Infra Developer</title>
-        <meta
-          name="description"
-          content="Get in touch with Pawan Infra Developer for construction enquiries, partnerships, or project details. Reach us today to start your dream project."
-        />
-      </Head>
+  <title>Contact Us | Pawan Infra Developer | Pune Construction Company</title>
+  <meta
+    name="description"
+    content="Contact Pawan Infra Developer for construction project enquiries, partnerships, quotes, and site visits across Pune and PCMC."
+  />
+
+  <meta
+    name="keywords"
+    content="contact Pawan Infra Developer, construction enquiries Pune, builders phone number Pune, construction company address"
+  />
+
+  <meta property="og:title" content="Contact Pawan Infra Developer" />
+  <meta
+    property="og:description"
+    content="Reach out to us for project enquiries, business opportunities, and construction partnerships."
+  />
+  <link rel="canonical" href="https://pawaninfradeveloper.in/contact" />
+</Head>
+
 
       <section className="min-h-screen bg-white dark:bg-[#0f0f0f] py-24 px-6 transition-colors duration-500">
         <div className="max-w-5xl mx-auto text-center">
