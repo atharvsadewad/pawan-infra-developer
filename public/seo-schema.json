@@ -1,0 +1,60 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Pawan Infra Developer",
+  "image": "https://pawaninfradeveloper.in/logo.png",
+  "url": "https://pawaninfradeveloper.in",
+  "telephone": "+91 91124 08999",
+  "additionalTelephone": "+91 98223 45275",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Shop No. 2, Matoshree Bungalow, Walhekarwadi",
+    "addressLocality": "Chinchwad",
+    "addressRegion": "Pune",
+    "postalCode": "411033",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "18.6283",
+    "longitude": "73.8037"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Pawan Basavraj Patil"
+  },
+  "foundingDate": "2025",
+  "description": "Pawan Infra Developer is a trusted construction company and infrastructure developer in Pune and PCMC, delivering high-quality residential, commercial, and industrial projects with 25+ completed works and 6 active ongoing projects.",
+  "priceRange": "₹₹₹",
+  "areaServed": [
+    "Pune",
+    "PCMC",
+    "Maharashtra",
+    "India"
+  ],
+  "keywords": [
+    "Construction Company Pune",
+    "Builders in Pune",
+    "PCMC construction company",
+    "Industrial Construction Pune",
+    "Real Estate Developer Pune",
+    "Pawan Infra Developer"
+  ],
+  "department": [
+    {
+      "@type": "LocalBusiness",
+      "name": "Residential Construction",
+      "url": "https://pawaninfradeveloper.in/services"
+    },
+    {
+      "@type": "LocalBusiness",
+      "name": "Commercial Construction",
+      "url": "https://pawaninfradeveloper.in/services"
+    },
+    {
+      "@type": "LocalBusiness",
+      "name": "Industrial Projects",
+      "url": "https://pawaninfradeveloper.in/services"
+    }
+  ]
+}
