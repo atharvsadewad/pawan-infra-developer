@@ -13,6 +13,7 @@ export default function Home() {
     <>
       <Head>
   <title>Pawan Infra Developer | Construction Company in Pune & PCMC</title>
+
   <meta
     name="description"
     content="Pawan Infra Developer is a trusted construction company in Pune & PCMC delivering residential, commercial, and industrial projects with quality, safety, and timely execution."
@@ -21,22 +22,55 @@ export default function Home() {
   {/* Primary SEO Keywords */}
   <meta
     name="keywords"
-    content="Pawan Infra Developer, construction company in Pune, builders in Chinchwad, infrastructure developers Pune, industrial construction Pune"
+    content="Construction Company in Pune, Builder in Chinchwad, Infrastructure Developer PCMC, Residential Construction Pune, Commercial Construction Pune"
   />
 
   {/* Open Graph */}
-  <meta property="og:title" content="Pawan Infra Developer | Construction Company in Pune" />
+  <meta property="og:title" content="Pawan Infra Developer" />
   <meta
     property="og:description"
-    content="Leading construction & infrastructure development company in Pune & PCMC with 25+ completed projects and 6 ongoing developments."
+    content="Trusted construction company in Pune & PCMC for residential, commercial, and industrial projects."
   />
-  <meta property="og:url" content="https://pawaninfradeveloper.in" />
+  <meta property="og:url" content="https://pawaninfradeveloper.in/" />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://pawaninfradeveloper.in/logo.png" />
 
-  {/* Canonical */}
-  <link rel="canonical" href="https://pawaninfradeveloper.in/" />
+  {/* JSON-LD Schema */}
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Pawan Infra Developer",
+        "url": "https://pawaninfradeveloper.in/",
+        "image": "https://pawaninfradeveloper.in/logo.png",
+        "description":
+          "Leading construction and infrastructure development company in Pune & PCMC with 25+ completed projects and 6 ongoing developments.",
+        "telephone": ["+91 91124 08999", "+91 98223 45275"],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Shop no 2, Matoshree Bungalow, Walhekarwadi",
+          "addressLocality": "Chinchwad",
+          "addressRegion": "Maharashtra",
+          "postalCode": "411033",
+          "addressCountry": "IN"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Pawan Basavraj Patil"
+        },
+        "foundingDate": "2025",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "18.6519",
+          "longitude": "73.8031"
+        },
+        "sameAs": []
+      })
+    }}
+  />
 </Head>
-
 
       {/* HERO SECTION */}
       <Hero />
