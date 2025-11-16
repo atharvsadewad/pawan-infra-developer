@@ -5,13 +5,26 @@ import Image from "next/image"
 export default function About() {
   return (
     <>
-      <Head>
-        <title>About Us | Pawan Infra Developer</title>
-        <meta
-          name="description"
-          content="Learn about the legacy and vision behind Pawan Infra Developer — built upon years of construction experience from Gurudevdatta Enterprises."
-        />
-      </Head>
+     <Head>
+  <title>About Us | Pawan Infra Developer | Builders in Pune</title>
+  <meta
+    name="description"
+    content="Learn about the journey of Pawan Infra Developer, built on the legacy of Gurudevdatta Enterprises with 25+ completed projects across Pune & PCMC."
+  />
+
+  <meta
+    name="keywords"
+    content="about Pawan Infra Developer, company history, Gurudevdatta Enterprises, builders in Pune, construction legacy"
+  />
+
+  <meta property="og:title" content="About Us - Pawan Infra Developer" />
+  <meta
+    property="og:description"
+    content="Pawan Infra Developer continues a strong legacy of construction excellence built over decades in Pune & PCMC."
+  />
+  <link rel="canonical" href="https://pawaninfradeveloper.in/about" />
+</Head>
+
 
       {/* ==========================
           PAGE HERO
