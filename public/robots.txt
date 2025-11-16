@@ -1,3 +1,12 @@
+# Allow all search engines to crawl website
 User-agent: *
 Allow: /
+
+# Block internal Next.js build files
+Disallow: /_next/
+
+# Block potential duplicate or unused paths (optional)
+Disallow: /*?*
+
+# Main Sitemap
 Sitemap: https://pawaninfradeveloper.in/sitemap.xml
