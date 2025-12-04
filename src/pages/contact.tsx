@@ -1,7 +1,10 @@
 import { motion } from "framer-motion"
 import Head from "next/head"
+import { useState } from "react";
 
 export default function Contact() {
+const [status, setStatus] = useState<"success" | "error" | "">("");
+
   return (
     <>
       <Head>
@@ -39,17 +42,47 @@ export default function Contact() {
         {/* Main Contact Form + Info */}
         <div className="mt-16 grid gap-10 md:grid-cols-2 max-w-6xl mx-auto items-start">
           {/* Contact Form */}
-          <motion.form
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            action="/api/contact"
-            method="POST"
-            className="bg-[#FAFAFA] dark:bg-[#1a1a1a] rounded-2xl p-8 shadow-[0_4px_30px_rgba(0,0,0,0.05)] 
-                       dark:shadow-[0_4px_30px_rgba(255,255,255,0.05)] 
-                       border border-gray-100 dark:border-gray-800 space-y-5 text-left transition-all duration-500"
-          >
+         <motion.form
+  initial={{ opacity: 0, x: -30 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true }}
+  onSubmit={async (e) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      body: JSON.stringify({
+        name: formData.get("name"),
+        email: formData.get("email"),
+        message: formData.get("message"),
+      }),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    if (res.ok) {
+      setStatus("success");
+      form.reset();
+    } else {
+      setStatus("error");
+    }
+  }}
+  className="bg-[#FAFAFA] dark:bg-[#1a1a1a] rounded-2xl p-8 shadow-[0_4px_30px_rgba(0,0,0,0.05)] dark:shadow-[0_4px_30px_rgba(255,255,255,0.05)] border border-gray-100 dark:border-gray-800 space-y-5 text-left transition-all duration-500"
+>
+{status === "success" && (
+  <div className="p-3 rounded-md bg-green-100 text-green-800 text-sm border border-green-300">
+    ✅ Message sent successfully!
+  </div>
+)}
+
+{status === "error" && (
+  <div className="p-3 rounded-md bg-red-100 text-red-800 text-sm border border-red-300">
+    ❌ Failed to send message. Please try again.
+  </div>
+)}
+
             <div>
               <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Full Name</label>
               <input
