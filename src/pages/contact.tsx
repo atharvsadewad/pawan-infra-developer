@@ -44,7 +44,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            action="https://formspree.io/f/your-form-id-here"
+            action="/api/contact"
             method="POST"
             className="bg-[#FAFAFA] dark:bg-[#1a1a1a] rounded-2xl p-8 shadow-[0_4px_30px_rgba(0,0,0,0.05)] 
                        dark:shadow-[0_4px_30px_rgba(255,255,255,0.05)] 
