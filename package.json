@@ -30,3 +30,9 @@
     "typescript": "^5"
   }
 }
+"dependencies": {
+  "next": "13.x",
+  "react": "18.x",
+  "react-dom": "18.x",
+  "resend": "^2.0.0"
+}
