@@ -146,10 +146,12 @@ const [status, setStatus] = useState<"success" | "error" | "">("");
               <p className="text-gray-700 dark:text-gray-300 text-sm">
                 ✉️ infradeveloperspawan@gmail.com
                 <br /> ☎️ +91 91124 08999 / +91 98223 45275
+                <br /> 🧾 GSTIN: 27IFJPP2317M1ZW
               </p>
             </div>
           </motion.div>
         </div>
+
 
         {/* 🔶 Google Map Section */}
         <motion.div
