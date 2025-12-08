@@ -11,9 +11,21 @@ export default function Footer() {
           <h3 className="text-2xl font-semibold text-[#C6A45B] mb-1">
             Pawan Infra Developer
           </h3>
-          <p className="text-gray-500 text-sm font-medium mb-3">
-            GSTIN: 27IFJPP2317M1ZW
+
+          {/* GST Block */}
+          <p className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">
+            GSTIN: 27IFJPP2317M1ZW  
+            <br />
+            <a
+              href="https://services.gst.gov.in/services/searchtp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#C6A45B] underline hover:text-[#d6b76b]"
+            >
+              Verify GST →
+            </a>
           </p>
+
           <p className="text-gray-400 text-sm leading-relaxed">
             Building spaces that inspire trust, comfort, and excellence across Pune and beyond.
           </p>
@@ -51,7 +63,6 @@ export default function Footer() {
             </a>
           </div>
 
-          {/* Copyright + Developed By */}
           <p className="text-sm text-gray-500 mt-5">
             © {new Date().getFullYear()} Pawan Infra Developer. All rights reserved.
             <br />
