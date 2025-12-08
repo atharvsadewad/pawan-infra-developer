@@ -8,9 +8,12 @@ export default function Footer() {
         
         {/* Column 1 */}
         <div>
-          <h3 className="text-2xl font-semibold text-[#C6A45B] mb-3">
+          <h3 className="text-2xl font-semibold text-[#C6A45B] mb-1">
             Pawan Infra Developer
           </h3>
+          <p className="text-gray-500 text-sm font-medium mb-3">
+            GSTIN: 27IFJPP2317M1ZW
+          </p>
           <p className="text-gray-400 text-sm leading-relaxed">
             Building spaces that inspire trust, comfort, and excellence across Pune and beyond.
           </p>
